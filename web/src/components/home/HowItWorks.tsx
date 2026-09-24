@@ -1,5 +1,5 @@
 const steps = [
-  { n: "01", title: "Assessment", desc: "A full history and hands-on physical exam — no cookie-cutter intake form." },
+  { n: "01", title: "Assessment", desc: "A full history and hands-on physical exam, not a cookie-cutter intake form." },
   { n: "02", title: "Diagnosis & Plan", desc: "A specific treatment plan and realistic timeline, explained in plain language." },
   { n: "03", title: "Hands-on Sessions", desc: "Manual therapy delivered by Dr. Gautam himself, tracked visit to visit." },
   { n: "04", title: "Home Program & Recall", desc: "A home routine plus a check-in so recovery doesn't stall after you feel better." },

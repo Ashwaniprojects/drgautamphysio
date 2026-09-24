@@ -36,19 +36,21 @@ export function Footer() {
         <div className="flex flex-col gap-3">
           <span className="text-[13px] font-bold tracking-[0.08em] uppercase text-paper/60">Our Clinics</span>
           {clinics.map((c) => (
-            <span key={c.slug} className="text-sm text-paper/85">
+            <Link key={c.slug} href="/clinics" className="text-sm text-paper/85">
               {c.name}
               {c.area && c.tag !== "Own clinic" ? `, ${c.area}` : ""}
-            </span>
+            </Link>
           ))}
         </div>
 
         <div className="flex flex-col gap-3">
           <span className="text-[13px] font-bold tracking-[0.08em] uppercase text-paper/60">Explore</span>
-          <Link href="/#conditions" className="text-sm text-paper/85">Conditions We Treat</Link>
-          <Link href="/#treatments" className="text-sm text-paper/85">How We Treat You</Link>
-          <Link href="/#stories" className="text-sm text-paper/85">Patient Stories</Link>
-          <Link href="/#blog" className="text-sm text-paper/85">Blog</Link>
+          <Link href="/conditions" className="text-sm text-paper/85">Conditions We Treat</Link>
+          <Link href="/treatments" className="text-sm text-paper/85">How We Treat You</Link>
+          <Link href="/about" className="text-sm text-paper/85">About</Link>
+          <Link href="/stories" className="text-sm text-paper/85">Patient Stories</Link>
+          <Link href="/blog" className="text-sm text-paper/85">Blog</Link>
+          <Link href="/contact" className="text-sm text-paper/85">Contact</Link>
         </div>
 
         <div className="flex flex-col gap-3">

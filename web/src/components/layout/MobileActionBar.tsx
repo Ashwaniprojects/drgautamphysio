@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export function MobileActionBar() {
   return (
-    <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 h-[68px] bg-white border-t border-ink/10 shadow-[0_-8px_24px_rgba(27,27,24,0.08)] flex">
+    <div className="lg:hidden fixed bottom-0 inset-x-0 z-40 h-[68px] bg-white border-t border-ink/10 shadow-[0_-8px_24px_rgba(16,30,28,0.08)] flex">
       <a href={siteConfig.clinicPhoneHref} className="flex-1 flex flex-col items-center justify-center gap-1 text-primary">
         <PhoneIcon size={19} />
         <span className="text-[11px] font-semibold">Call</span>

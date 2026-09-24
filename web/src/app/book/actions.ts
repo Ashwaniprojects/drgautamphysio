@@ -33,7 +33,7 @@ export async function createBooking(input: BookingInput): Promise<BookingResult>
     return {
       ok: false,
       error:
-        "The booking backend isn't connected yet — no Supabase project has been created. " +
+        "The booking backend isn't connected yet. No Supabase project has been created. " +
         "See .env.example. Nothing was saved.",
     };
   }

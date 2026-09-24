@@ -12,10 +12,10 @@ export function Hero() {
             Trusted in Lucknow since [YEAR]
           </span>
           <h1 className="font-display text-[38px] md:text-[52px] font-semibold leading-[1.12] text-ink">
-            3 Lucknow clinics. 500+ patient reviews. Real relief — no surgery, no meds.
+            3 Lucknow clinics. 500+ patient reviews. Real relief, no surgery, no meds.
           </h1>
           <p className="text-[17px] md:text-[18px] leading-relaxed text-ink/70 max-w-[500px]">
-            Hands-on physiotherapy, chiropractic and osteopathic care from Dr. S.K. Gautam — a
+            Hands-on physiotherapy, chiropractic and osteopathic care from Dr. S.K. Gautam, with a
             treatment plan built around how you actually recover, not a generic protocol.
           </p>
           <div className="flex flex-wrap items-center gap-4 mt-2">
@@ -38,7 +38,7 @@ export function Hero() {
               [PHOTO: Dr. Gautam with a patient at the Subhash Marg clinic]
             </span>
           </div>
-          <div className="absolute -left-4 md:-left-7 bottom-6 md:bottom-9 bg-white rounded-2xl px-5 py-4 md:px-6 md:py-5 shadow-[0_16px_40px_rgba(27,27,24,0.16)] w-[210px] md:w-[240px]">
+          <div className="absolute -left-4 md:-left-7 bottom-6 md:bottom-9 bg-white rounded-2xl px-5 py-4 md:px-6 md:py-5 shadow-[0_16px_40px_rgba(16,30,28,0.16)] w-[210px] md:w-[240px]">
             <span className="font-display text-2xl md:text-3xl font-semibold text-ink leading-none block">
               4.8★
             </span>

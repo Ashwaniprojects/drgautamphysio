@@ -11,7 +11,7 @@ import { conditions, getCondition } from "@/lib/data/conditions";
 import { clinics } from "@/lib/data/clinics";
 
 export function generateStaticParams() {
-  return conditions.filter((c) => c.published).map((c) => ({ slug: c.slug }));
+  return conditions.map((c) => ({ slug: c.slug }));
 }
 
 export async function generateMetadata({
@@ -23,7 +23,7 @@ export async function generateMetadata({
   const condition = getCondition(slug);
   if (!condition) return {};
   return {
-    title: `${condition.title} Treatment in Lucknow — Dr. Gautam's Physio`,
+    title: `${condition.title} Treatment in Lucknow | Dr. Gautam's Physio`,
     description: condition.heroSubhead,
   };
 }
@@ -47,7 +47,7 @@ export default async function ConditionPage({
           <div className="flex items-center gap-2 text-[13px] text-ink/55 mb-6">
             <Link href="/" className="hover:underline">Home</Link>
             <span>/</span>
-            <span>Conditions We Treat</span>
+            <Link href="/conditions" className="hover:underline">Conditions We Treat</Link>
             <span>/</span>
             <span className="text-primary font-semibold">{condition.title}</span>
           </div>
@@ -133,11 +133,11 @@ export default async function ConditionPage({
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-6">
               <div className="bg-tint rounded-2xl p-6 flex flex-col gap-1.5">
                 <span className="font-display text-2xl font-semibold text-primary">{condition.recovery.sessions}</span>
-                <span className="text-sm text-ink/65">Typical program length — confirmed with Dr. Gautam at assessment</span>
+                <span className="text-sm text-ink/65">Typical program length, confirmed with Dr. Gautam at assessment</span>
               </div>
               <div className="bg-tint rounded-2xl p-6 flex flex-col gap-1.5">
                 <span className="font-display text-2xl font-semibold text-primary">{condition.recovery.firstChange}</span>
-                <span className="text-sm text-ink/65">When most patients notice a first change — not a guaranteed outcome</span>
+                <span className="text-sm text-ink/65">When most patients notice a first change, not a guaranteed outcome</span>
               </div>
               <div className="bg-tint rounded-2xl p-6 flex flex-col gap-1.5">
                 <span className="font-display text-2xl font-semibold text-primary">{condition.recovery.frequency}</span>
@@ -145,7 +145,7 @@ export default async function ConditionPage({
               </div>
             </div>
             <p className="text-[13.5px] text-ink/55 leading-relaxed max-w-3xl">
-              Every case is different — these ranges are placeholders pending Dr. Gautam&apos;s confirmed figures
+              Every case is different. These ranges are placeholders pending Dr. Gautam&apos;s confirmed figures
               (requirements checklist §C). The real timeline for your case is set at the first assessment, not before.
             </p>
           </div>

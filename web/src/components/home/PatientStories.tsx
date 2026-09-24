@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { StarIcon, ArrowRightIcon } from "@/components/icons";
 
 const placeholderReviews = [
@@ -18,9 +19,9 @@ export function PatientStories() {
             In their own words
           </h2>
         </div>
-        <a href="#" className="inline-flex items-center gap-1.5 text-primary text-[15px] font-semibold shrink-0">
+        <Link href="/stories" className="inline-flex items-center gap-1.5 text-primary text-[15px] font-semibold shrink-0">
           Read all reviews <ArrowRightIcon size={15} />
-        </a>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-5">
@@ -32,7 +33,7 @@ export function PatientStories() {
               ))}
             </div>
             <p className="text-[15.5px] leading-relaxed text-ink">
-              &ldquo;[Patient quote pending consent — a specific recovery story in the patient&apos;s own words
+              &ldquo;[Patient quote pending consent. A specific recovery story in the patient&apos;s own words
               replaces this line.]&rdquo;
             </p>
             <div className="flex items-center gap-3 mt-1">
@@ -40,7 +41,7 @@ export function PatientStories() {
               <div className="flex flex-col">
                 <span className="text-sm font-semibold">[Patient name]</span>
                 <span className="text-xs text-ink/55">
-                  Treated for — {r.condition} &middot; {r.source}
+                  Treated for {r.condition} &middot; {r.source}
                 </span>
               </div>
             </div>
@@ -48,7 +49,7 @@ export function PatientStories() {
         ))}
       </div>
       <span className="text-[13px] text-ink/55">
-        Shown as placeholders until named reviews and signed patient consent are confirmed — see
+        Shown as placeholders until named reviews and signed patient consent are confirmed. See
         requirements checklist §D.
       </span>
     </section>

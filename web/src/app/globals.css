@@ -6,7 +6,7 @@
   --color-primary-hover: #189284;
   --color-ink: #101e1c; /* near-black, cool */
   --color-paper: #ffffff;
-  --color-accent: #1ca898; /* no separate accent hue in this palette — CTAs use primary */
+  --color-accent: #1ca898; /* no separate accent hue in this palette, CTAs use primary */
   --color-tint: #bee6dc; /* pale mint */
   --color-muted: #565750;
 }
@@ -20,7 +20,7 @@
   --color-accent: var(--color-accent);
   --color-tint: var(--color-tint);
   --color-muted: var(--color-muted);
-  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-display: var(--font-inter), system-ui, sans-serif;
   --font-sans: var(--font-inter), system-ui, sans-serif;
 }
 

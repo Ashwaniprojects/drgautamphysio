@@ -11,42 +11,30 @@ export function SymptomTiles() {
           What brings you here
         </span>
         <h2 className="font-display text-[28px] md:text-[36px] font-semibold text-ink">
-          Tell us where it hurts — we&apos;ll show you the path back
+          Tell us where it hurts. We&apos;ll show you the path back
         </h2>
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-        {conditions.map((c) =>
-          c.published ? (
-            <Link
-              key={c.slug}
-              href={`/conditions/${c.slug}`}
-              className="bg-white rounded-2xl p-5 md:p-6 flex flex-col gap-3.5 hover:shadow-md transition-shadow"
-            >
-              <span className="w-12 h-12 md:w-13 md:h-13 rounded-[14px] bg-tint flex items-center justify-center text-primary">
-                <ConditionIcon icon={c.icon} />
-              </span>
-              <span className="text-[15px] md:text-base font-semibold text-ink">{c.title}</span>
-            </Link>
-          ) : (
-            <div
-              key={c.slug}
-              className="bg-white rounded-2xl p-5 md:p-6 flex flex-col gap-3.5 opacity-90"
-            >
-              <span className="w-12 h-12 md:w-13 md:h-13 rounded-[14px] bg-tint flex items-center justify-center text-primary">
-                <ConditionIcon icon={c.icon} />
-              </span>
-              <span className="text-[15px] md:text-base font-semibold text-ink">{c.title}</span>
-            </div>
-          )
-        )}
+        {conditions.map((c) => (
+          <Link
+            key={c.slug}
+            href={`/conditions/${c.slug}`}
+            className="bg-white rounded-2xl p-5 md:p-6 flex flex-col gap-3.5 hover:shadow-md transition-shadow"
+          >
+            <span className="w-12 h-12 md:w-13 md:h-13 rounded-[14px] bg-tint flex items-center justify-center text-primary">
+              <ConditionIcon icon={c.icon} />
+            </span>
+            <span className="text-[15px] md:text-base font-semibold text-ink">{c.title}</span>
+          </Link>
+        ))}
 
-        <div className="bg-primary rounded-2xl p-5 md:p-6 flex flex-col justify-center gap-2.5">
+        <Link href="/conditions" className="bg-primary rounded-2xl p-5 md:p-6 flex flex-col justify-center gap-2.5">
           <span className="text-[15px] md:text-base font-semibold text-paper">Not sure what&apos;s wrong?</span>
-          <a href="#" className="inline-flex items-center gap-1.5 text-paper text-sm font-semibold">
+          <span className="inline-flex items-center gap-1.5 text-paper text-sm font-semibold">
             View all conditions <ArrowRightIcon size={14} />
-          </a>
-        </div>
+          </span>
+        </Link>
       </div>
     </section>
   );

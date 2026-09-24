@@ -1,17 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/Button";
 
 const navLinks = [
-  { label: "Conditions", href: "/#conditions" },
-  { label: "Treatments", href: "/#treatments" },
-  { label: "About", href: "#" },
-  { label: "Clinics", href: "/#clinics" },
-  { label: "Stories", href: "/#stories" },
-  { label: "Blog", href: "/#blog" },
-  { label: "Contact", href: "#" },
+  { label: "Conditions", href: "/conditions" },
+  { label: "Treatments", href: "/treatments" },
+  { label: "About", href: "/about" },
+  { label: "Clinics", href: "/clinics" },
+  { label: "Stories", href: "/stories" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -22,11 +23,11 @@ export function Navbar() {
       <div className="h-[84px] flex items-center justify-between px-6 md:px-22">
         <Logo />
 
-        <nav className="hidden lg:flex items-center gap-7.5">
+        <nav className="hidden xl:flex items-center gap-6">
           {navLinks.map((link) => (
-            <a key={link.label} href={link.href} className="text-[14.5px] font-medium text-ink hover:text-primary">
+            <Link key={link.label} href={link.href} className="text-[14.5px] font-medium text-ink hover:text-primary whitespace-nowrap">
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -39,7 +40,7 @@ export function Navbar() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="lg:hidden flex flex-col gap-1.5 p-2"
+            className="xl:hidden flex flex-col gap-1.5 p-2"
           >
             <span className="w-5 h-0.5 bg-ink" />
             <span className="w-5 h-0.5 bg-ink" />
@@ -49,16 +50,16 @@ export function Navbar() {
       </div>
 
       {open && (
-        <nav className="lg:hidden border-t border-ink/10 bg-white px-6 py-4 flex flex-col gap-1">
+        <nav className="xl:hidden border-t border-ink/10 bg-white px-6 py-4 flex flex-col gap-1">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               onClick={() => setOpen(false)}
               className="text-[15px] font-medium text-ink py-2.5"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <div className="sm:hidden mt-2">
             <Button href="/book" className="w-full">

@@ -1,4 +1,4 @@
-# Dr. Gautam's Physio & Rehab Centre — Website
+# Dr. Gautam's Physio & Rehab Centre, Website
 
 Next.js 16 + TypeScript + Tailwind v4. Design tokens match
 [`../03-design-system.md`](../03-design-system.md); site structure follows
@@ -7,11 +7,11 @@ Next.js 16 + TypeScript + Tailwind v4. Design tokens match
 ## Live
 
 - **Production:** https://web-ten-omega-8rx65w7riq.vercel.app (custom domain
-  pending — `01-requirements-checklist.md` §E)
+  pending, `01-requirements-checklist.md` §E)
 - **Repo:** https://github.com/clicknify-commits/dr-gautam-physio (private)
 - **Vercel project:** https://vercel.com/clicknify/web
 
-Pushes to `master` auto-deploy to production via the GitHub → Vercel
+Pushes to `master` auto-deploy to production via the GitHub to Vercel
 integration (project root directory is set to `web/`, since the repo root
 also holds the client's planning docs).
 
@@ -33,15 +33,21 @@ in-UI message instead of a fake success state. To connect it:
 1. Create a project at [supabase.com](https://supabase.com).
 2. Run `supabase/schema.sql` in its SQL editor.
 3. Copy `.env.example` to `.env.local` and fill in the values from
-   Project Settings → API.
+   Project Settings, API.
 4. Add the same variables in the Vercel project's **Environment Variables**
    settings (`.env.local` is git-ignored and never reaches Vercel on its
    own).
 
 ## What's built vs. pending
 
-See the root [`README.md`](../README.md) and
-[`01-requirements-checklist.md`](../01-requirements-checklist.md) for the
-full status — in short: homepage, one condition-page template (Back Pain &
-Slip Disc), and the booking flow are built. About, the remaining condition
-pages, Blog, Patient Stories, Contact, and the reception/admin views are not.
+Built: homepage, all 7 condition pages, Book Appointment (wired to
+Supabase), Treatments, About, Our Clinics, Patient Stories, Blog index, and
+Contact (form has a honest fallback until a sending email address exists,
+checklist §E).
+
+Not yet built: individual blog articles (the existing sciatica article
+needs migrating from the current site, source content not yet in this
+repo), and the reception/admin views (staff schedule, patient records) that
+were designed on the canvas but never translated into code. See the root
+[`README.md`](../README.md) and [`01-requirements-checklist.md`](../01-requirements-checklist.md)
+for what's still pending from the client's side.

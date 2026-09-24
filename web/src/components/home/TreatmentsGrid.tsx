@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRightIcon } from "@/components/icons";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { treatments } from "@/lib/data/treatments";
@@ -14,9 +15,9 @@ export function TreatmentsGrid() {
             Eight approaches, one hands-on standard of care
           </h2>
         </div>
-        <a href="#" className="inline-flex items-center gap-1.5 text-primary text-[15px] font-semibold shrink-0">
+        <Link href="/treatments" className="inline-flex items-center gap-1.5 text-primary text-[15px] font-semibold shrink-0">
           See all treatments <ArrowRightIcon size={15} />
-        </a>
+        </Link>
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mb-8">

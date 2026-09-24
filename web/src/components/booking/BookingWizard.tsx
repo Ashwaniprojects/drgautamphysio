@@ -105,7 +105,7 @@ export function BookingWizard() {
   const submitLabel = pending ? "Booking…" : "Confirm booking";
 
   return (
-    <div className="w-full max-w-[880px] bg-white rounded-[24px] shadow-[0_24px_60px_rgba(27,27,24,0.10)] p-6 md:p-12 flex flex-col gap-8 mx-auto">
+    <div className="w-full max-w-[880px] bg-white rounded-[24px] shadow-[0_24px_60px_rgba(16,30,28,0.10)] p-6 md:p-12 flex flex-col gap-8 mx-auto">
       {step <= 4 && (
         <div className="flex items-center">
           {STEP_LABELS.map((label, i) => {
@@ -181,7 +181,7 @@ export function BookingWizard() {
               <div className="flex flex-col gap-4">
                 <h2 className="font-display text-xl md:text-2xl font-semibold">Choose a date</h2>
                 <p className="text-[13px] text-ink/55 -mt-2">
-                  Showing general availability — exact per-clinic hours will filter this
+                  Showing general availability. Exact per-clinic hours will filter this
                   automatically once confirmed (checklist §B).
                 </p>
                 <div className="flex gap-2 overflow-x-auto pb-1">
@@ -296,11 +296,11 @@ export function BookingWizard() {
             <div className="flex flex-col gap-6">
               <h2 className="font-display text-xl md:text-2xl font-semibold">Review &amp; confirm</h2>
               <div className="bg-tint rounded-2xl p-6 flex flex-col gap-4">
-                <SummaryRow label="Clinic" value={selectedLocation?.name ?? "—"} onChange={() => setStep(1)} />
+                <SummaryRow label="Clinic" value={selectedLocation?.name ?? "-"} onChange={() => setStep(1)} />
                 <div className="h-px bg-ink/10" />
                 <SummaryRow
                   label="Date & time"
-                  value={selectedDate ? `${selectedDate.weekday} ${selectedDate.day} · ${time}` : "—"}
+                  value={selectedDate ? `${selectedDate.weekday} ${selectedDate.day} · ${time}` : "-"}
                   onChange={() => setStep(2)}
                 />
                 <div className="h-px bg-ink/10" />
@@ -320,7 +320,7 @@ export function BookingWizard() {
                 </span>
                 <span className="text-[13.5px] leading-relaxed text-ink/65">
                   Also send me appointment reminders and occasional recovery tips on WhatsApp
-                  (optional — separate from your booking confirmation, which we always send).
+                  (optional, separate from your booking confirmation, which we always send).
                 </span>
               </button>
               {submitError && (
@@ -347,13 +347,13 @@ export function BookingWizard() {
           <h2 className="font-display text-2xl md:text-[28px] font-semibold">You&apos;re booked!</h2>
           <p className="text-[15.5px] leading-relaxed text-ink/65 max-w-md">
             Booking reference <strong>{booked.appointmentId.slice(0, 8)}</strong>. We&apos;ll confirm
-            on WhatsApp once that number is connected (checklist §E) — for now, keep this reference
+            on WhatsApp once that number is connected (checklist §E). For now, keep this reference
             if you need to call the clinic.
           </p>
           <div className="bg-tint rounded-2xl px-7 py-5 flex gap-7 flex-wrap justify-center">
-            <SummaryStat label="Clinic" value={selectedLocation?.name ?? "—"} />
-            <SummaryStat label="Date" value={selectedDate ? `${selectedDate.weekday} ${selectedDate.day}` : "—"} />
-            <SummaryStat label="Time" value={time ?? "—"} />
+            <SummaryStat label="Clinic" value={selectedLocation?.name ?? "-"} />
+            <SummaryStat label="Date" value={selectedDate ? `${selectedDate.weekday} ${selectedDate.day}` : "-"} />
+            <SummaryStat label="Time" value={time ?? "-"} />
           </div>
           <button
             type="button"

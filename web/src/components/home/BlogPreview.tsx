@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRightIcon } from "@/components/icons";
 
 const posts = [
@@ -18,9 +19,9 @@ export function BlogPreview() {
             Straight answers on recovery
           </h2>
         </div>
-        <a href="#" className="inline-flex items-center gap-1.5 text-primary text-[15px] font-semibold shrink-0">
+        <Link href="/blog" className="inline-flex items-center gap-1.5 text-primary text-[15px] font-semibold shrink-0">
           Visit the blog <ArrowRightIcon size={15} />
-        </a>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-6">
