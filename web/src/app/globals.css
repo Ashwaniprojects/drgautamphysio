@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #0e5e56; /* Recovery Teal */
-  --color-primary-dark: #0a4a44;
-  --color-ink: #1b1b18; /* Warm Charcoal */
-  --color-paper: #faf7f2; /* Warm Paper */
-  --color-accent: #e8703a; /* Recovery Coral — CTAs only */
-  --color-tint: #e4f0ee; /* Pale Teal */
-  --color-muted: #6b6b64;
+  --color-primary: #1ca898; /* MindCare Teal */
+  --color-primary-dark: #14786d;
+  --color-primary-hover: #189284;
+  --color-ink: #101e1c; /* near-black, cool */
+  --color-paper: #ffffff;
+  --color-accent: #1ca898; /* no separate accent hue in this palette — CTAs use primary */
+  --color-tint: #bee6dc; /* pale mint */
+  --color-muted: #565750;
 }
 
 @theme inline {
   --color-primary: var(--color-primary);
   --color-primary-dark: var(--color-primary-dark);
+  --color-primary-hover: var(--color-primary-hover);
   --color-ink: var(--color-ink);
   --color-paper: var(--color-paper);
   --color-accent: var(--color-accent);

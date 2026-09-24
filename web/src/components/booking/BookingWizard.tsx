@@ -324,13 +324,13 @@ export function BookingWizard() {
                 </span>
               </button>
               {submitError && (
-                <p className="text-sm text-accent bg-accent/10 rounded-xl px-4 py-3">{submitError}</p>
+                <p className="text-sm text-red-700 bg-red-50 rounded-xl px-4 py-3">{submitError}</p>
               )}
               <button
                 type="button"
                 onClick={submitBooking}
                 disabled={pending}
-                className="w-full h-14 rounded-full font-bold text-white bg-accent hover:bg-[#d9612c] disabled:opacity-70"
+                className="w-full h-14 rounded-full font-bold text-white bg-accent hover:bg-primary-hover disabled:opacity-70"
               >
                 {submitLabel}
               </button>

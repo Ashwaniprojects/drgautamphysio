@@ -10,7 +10,7 @@ export function Footer() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2.5">
             <span className="w-9 h-9 rounded-[9px] bg-paper flex items-center justify-center shrink-0">
-              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#0E5E56" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#1CA898" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
                 <path d="M4 14c2-6 4-9 8-9s6 3 8 9" />
                 <path d="M4 14c0 3.5 3.5 6 8 6s8-2.5 8-6" />
               </svg>

@@ -30,7 +30,7 @@ export function TreatmentsGrid() {
 
       <div className="bg-primary rounded-2xl px-6 md:px-8 py-6 md:py-7 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
         <div className="flex items-center gap-4">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FAF7F2" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
             <path d="M3 10.5L12 4l9 6.5" />
             <path d="M5 9.5V20h14V9.5" />
           </svg>

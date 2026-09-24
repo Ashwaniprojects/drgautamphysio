@@ -7,7 +7,7 @@ const base =
   "inline-flex items-center justify-center gap-2 rounded-full text-[15px] font-semibold whitespace-nowrap transition-colors";
 
 const variants: Record<Variant, string> = {
-  primary: "bg-accent text-white px-7 py-4 hover:bg-[#d9612c]",
+  primary: "bg-accent text-white px-7 py-4 hover:bg-primary-hover",
   "solid-teal": "bg-primary text-paper px-7 py-4 hover:bg-primary-dark",
   secondary: "bg-transparent text-primary border-[1.5px] border-primary px-6.5 py-3.5 hover:bg-tint",
   "secondary-inverse":

@@ -2,20 +2,44 @@
 
 ## Colour
 
-Most local competitors default to clinical blue-and-white. Teal sits between blue's calm/trust and green's healing/renewal without the sterile or generic-medical feel — a real point of difference in this specific market.
+Updated 2026-09-24 to match a client-supplied reference palette (a mint/teal
+medical-site moodboard). Most local competitors default to clinical
+blue-and-white; this stays in the teal family but moves brighter and more
+monochrome — a single saturated teal carries both brand identity and CTA
+weight, on a clean white ground, rather than pairing teal with a second
+accent hue.
 
 | Token | Hex | Use |
 |---|---|---|
-| `--color-primary` (Recovery Teal) | `#0E5E56` | Headers, nav, primary brand colour |
-| `--color-ink` (Warm Charcoal) | `#1B1B18` | Body text |
-| `--color-paper` (Warm Paper) | `#FAF7F2` | Page background |
-| `--color-accent` (Recovery Coral) | `#E8703A` | **CTA buttons only** — Book, WhatsApp |
-| `--color-tint` (Pale Teal) | `#E4F0EE` | Card backgrounds, section dividers |
+| `--color-primary` (MindCare Teal) | `#1CA898` | Headers, nav, primary brand colour, **and CTA buttons** |
+| `--color-primary-dark` | `#14786D` | Footer background, dark-on-teal surfaces |
+| `--color-primary-hover` | `#189284` | Hover state for solid teal buttons |
+| `--color-ink` | `#101E1C` | Headings, strong text (near-black, cool) |
+| `--color-muted` | `#565750` | Body copy, secondary text |
+| `--color-paper` | `#FFFFFF` | Page background |
+| `--color-tint` | `#BEE6DC` | Pale-mint card backgrounds, section dividers |
+
+`--color-accent` still exists as a token (for anything still wired to it) but
+is set equal to `--color-primary` — **there is no second accent hue in this
+palette.** That's a deliberate change from the earlier two-colour-plus-accent
+system: the reference has no orange/coral anywhere, so "Book Appointment",
+"Confirm booking", stat highlights, and icon badges all use the same solid
+teal, differentiated from chrome by weight (solid fill vs. outline vs. pale
+tint) rather than by hue.
 
 Rules:
-- Two colours plus one accent — no third colour introduced through service icons, tags, or badges.
-- Coral is reserved for the two primary actions. If it starts showing up elsewhere, the palette is breaking down.
-- Contrast holds at WCAG AA minimum throughout — a meaningful share of this audience is older or reading under discomfort; low-contrast pastels cost usability here, not just aesthetics.
+- One brand colour, three tones of it (solid / pale tint / near-black), on
+  white. No third hue introduced through service icons, tags, or badges —
+  including the temptation to reach for orange/red for "attention" states,
+  which now needs a different solution (see below).
+- Exception: functional error/warning states (e.g. a failed form
+  submission) use a standard semantic red (Tailwind's `red-600`/`red-50`),
+  not the brand palette — a teal-on-teal message would read as neutral
+  info, not a warning. This is a UI-state color, not a brand color, and
+  should stay rare.
+- Contrast holds at WCAG AA minimum throughout — a meaningful share of this
+  audience is older or reading under discomfort; low-contrast pastels cost
+  usability here, not just aesthetics.
 
 ## Typography
 
