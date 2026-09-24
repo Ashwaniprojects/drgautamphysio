@@ -5,7 +5,9 @@ export type IconKey =
   | "sports"
   | "surgery"
   | "joint"
-  | "heart";
+  | "heart"
+  | "migraine"
+  | "pelvic";
 
 export type ConditionFaq = { q: string; a: string };
 export type ConditionStep = { title: string; desc: string };
@@ -339,6 +341,96 @@ export const conditions: Condition[] = [
       {
         q: "What age range do you see for pediatric physiotherapy?",
         a: "Bring your specific concern to Dr. Gautam and he'll advise whether physiotherapy is appropriate for your child's age and situation.",
+      },
+    ],
+  },
+  {
+    slug: "migraine",
+    title: "Migraine",
+    icon: "migraine",
+    heroSubhead:
+      "Recurring headaches that come with nausea, light sensitivity or visual disturbance often have a physical component that medication alone doesn't address. Hands-on assessment and treatment from Dr. S.K. Gautam.",
+    whoHelpsIntro:
+      "This page is for anyone with migraine or recurring headache that isn't fully controlled by medication. Neck, jaw and upper back tension is a common contributing factor, and it's one physiotherapy can address directly.",
+    whoHelpsBullets: [
+      "Migraines or headaches that come back regularly despite medication",
+      "Headaches that seem linked to neck stiffness or tension",
+      "Light or sound sensitivity, nausea, or visual aura with your headaches",
+      "You want to reduce how often they happen, not just treat each one as it comes",
+      "A doctor has ruled out other causes and referred you toward physical management",
+    ],
+    sessionSteps: [
+      { title: "Headache pattern assessment", desc: "Understanding your triggers, frequency and any neck or jaw involvement, not just the headache itself." },
+      { title: "Manual therapy for neck & upper back", desc: "Hands-on treatment of the muscles and joints that commonly refer pain into the head." },
+      { title: "Craniosacral technique", desc: "A gentle, specific approach for headache and tension-related symptoms." },
+      { title: "Trigger & lifestyle management", desc: "Practical guidance on posture, sleep and triggers alongside your ongoing medical care." },
+    ],
+    recovery: {
+      sessions: "[X-X] sessions",
+      firstChange: "Visit [X]",
+      frequency: "1-2 / week",
+    },
+    faqs: [
+      {
+        q: "Can physiotherapy actually reduce migraines?",
+        a: "For migraines with a neck or muscular tension component, yes, hands-on treatment can reduce frequency and severity. Dr. Gautam will assess whether your pattern fits this at your first visit.",
+      },
+      {
+        q: "Should I stop my migraine medication?",
+        a: "No. Physiotherapy works alongside your doctor's medical management, not instead of it. Continue any prescribed treatment unless your doctor advises otherwise.",
+      },
+      {
+        q: "Is craniosacral technique the same as a regular head massage?",
+        a: "No, it's a specific, gentle manual technique with a defined approach, not a general relaxation massage.",
+      },
+      {
+        q: "How soon can I get an appointment?",
+        a: "Same-day or next-day in most cases. Call, WhatsApp, or use the booking page to see the next open slot at your preferred clinic.",
+      },
+    ],
+  },
+  {
+    slug: "pelvic-floor-rehab",
+    title: "Pelvic Floor Rehab",
+    icon: "pelvic",
+    heroSubhead:
+      "Pelvic floor concerns after childbirth, surgery or with age are common and treatable, even though they're rarely discussed. Careful, appropriate assessment and treatment from Dr. S.K. Gautam.",
+    whoHelpsIntro:
+      "This page is for anyone with pelvic floor weakness, discomfort or dysfunction, including postpartum recovery, post-surgical changes, or general pelvic floor concerns. Assessment and treatment are handled with the sensitivity this area needs.",
+    whoHelpsBullets: [
+      "Pelvic floor weakness or discomfort after childbirth",
+      "Concerns following pelvic or abdominal surgery",
+      "Ongoing pelvic pain or dysfunction with no clear cause identified yet",
+      "You've been told to \"do pelvic floor exercises\" but aren't sure you're doing them correctly",
+      "You want a physiotherapist who treats this specifically, not as an afterthought",
+    ],
+    sessionSteps: [
+      { title: "A careful, appropriate assessment", desc: "Understanding your history and specific concern, conducted with the sensitivity this area needs." },
+      { title: "A tailored treatment approach", desc: "Technique and exercise selected for your specific pelvic floor concern and stage of recovery." },
+      { title: "Guided, correct exercise", desc: "Making sure the exercises you're doing are actually reaching and strengthening the right muscles." },
+      { title: "A progressive home plan", desc: "A realistic routine you can continue independently, with follow-up to track progress." },
+    ],
+    recovery: {
+      sessions: "[X-X] sessions",
+      firstChange: "Visit [X]",
+      frequency: "1-2 / week",
+    },
+    faqs: [
+      {
+        q: "Is this assessment uncomfortable or invasive?",
+        a: "Dr. Gautam will explain what assessment and treatment involves before starting, and adapts the approach to what you're comfortable with. Ask any question you have at the first visit.",
+      },
+      {
+        q: "How long after childbirth should I wait before coming in?",
+        a: "This varies by individual and delivery type. Bring any guidance from your obstetrician, and Dr. Gautam will advise what's appropriate for your specific recovery stage.",
+      },
+      {
+        q: "Is this only for women?",
+        a: "Pelvic floor concerns affect men too, particularly after prostate surgery. The same assessment and treatment approach applies.",
+      },
+      {
+        q: "Do I need a referral?",
+        a: "No, you can book directly. If a doctor has already advised you on this, bring that guidance along to your first visit.",
       },
     ],
   },

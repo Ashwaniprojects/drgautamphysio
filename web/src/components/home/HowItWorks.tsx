@@ -1,19 +1,19 @@
 const steps = [
-  { n: "01", title: "Assessment", desc: "A full history and hands-on physical exam, not a cookie-cutter intake form." },
-  { n: "02", title: "Diagnosis & Plan", desc: "A specific treatment plan and realistic timeline, explained in plain language." },
-  { n: "03", title: "Hands-on Sessions", desc: "Manual therapy delivered by Dr. Gautam himself, tracked visit to visit." },
-  { n: "04", title: "Home Program & Recall", desc: "A home routine plus a check-in so recovery doesn't stall after you feel better." },
+  { n: "01", title: "Assessment", desc: "Understand your history, movement and symptoms, not a cookie-cutter intake form." },
+  { n: "02", title: "Diagnosis & Plan", desc: "Identify contributing factors and create a personalized treatment plan." },
+  { n: "03", title: "Hands-on Treatment", desc: "Manual therapy, movement-based treatment and techniques suited to your condition." },
+  { n: "04", title: "Home Program & Progress", desc: "Exercises, education and follow-up to support long-term improvement." },
 ];
 
 export function HowItWorks() {
   return (
-    <section className="bg-paper px-6 md:px-22 py-14 md:py-22">
+    <section className="bg-tint px-6 md:px-22 py-14 md:py-22">
       <div className="flex flex-col gap-2.5 max-w-2xl mb-12">
         <span className="text-[13px] font-bold tracking-[0.12em] uppercase text-primary">
-          How treatment works
+          Treatment philosophy
         </span>
         <h2 className="font-display text-[28px] md:text-[36px] font-semibold text-ink">
-          A clear plan from the first visit, not a guessing game
+          A clear plan from assessment to recovery
         </h2>
       </div>
 

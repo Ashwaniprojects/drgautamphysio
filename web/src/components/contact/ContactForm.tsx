@@ -1,23 +1,30 @@
 "use client";
 
 import { useState } from "react";
+import { siteConfig } from "@/lib/site-config";
 
 export function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [sent, setSent] = useState(false);
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    const subject = `Website enquiry from ${name}`;
+    const body = `Name: ${name}\nPhone: ${phone}\n\n${message}`;
+    const mailto = `mailto:${siteConfig.clinicEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+    setSent(true);
   }
 
-  if (submitted) {
+  if (sent) {
     return (
       <div className="bg-tint rounded-2xl p-6 flex flex-col gap-2">
-        <span className="text-base font-semibold text-ink">This form isn&apos;t connected yet</span>
+        <span className="text-base font-semibold text-ink">Opening your email app</span>
         <span className="text-sm text-ink/65 leading-relaxed">
-          A sending email address needs to be set up first, requirements checklist §E. For now,
-          please call or WhatsApp us using the details on this page, we reply fastest that way
-          anyway.
+          Your message is drafted and addressed to {siteConfig.clinicEmail}. Send it from there, or
+          call or WhatsApp us instead if that&apos;s easier.
         </span>
       </div>
     );
@@ -31,6 +38,8 @@ export function ContactForm() {
           <input
             type="text"
             required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             placeholder="e.g. Ramesh Kumar"
             className="h-12 rounded-[10px] border-[1.5px] border-ink/15 px-3.5 text-[15px] focus:outline-none focus:border-primary"
           />
@@ -40,6 +49,8 @@ export function ContactForm() {
           <input
             type="tel"
             required
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             placeholder="e.g. 98765 43210"
             className="h-12 rounded-[10px] border-[1.5px] border-ink/15 px-3.5 text-[15px] focus:outline-none focus:border-primary"
           />
@@ -49,6 +60,8 @@ export function ContactForm() {
         <span className="text-[13px] font-semibold text-ink/65">Message</span>
         <textarea
           required
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           placeholder="What can we help with?"
           className="h-28 rounded-[10px] border-[1.5px] border-ink/15 px-3.5 py-2.5 text-[15px] resize-none focus:outline-none focus:border-primary"
         />

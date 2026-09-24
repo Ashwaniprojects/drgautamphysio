@@ -31,6 +31,18 @@ const paths: Record<IconKey, React.ReactNode> = {
     </g>
   ),
   heart: <path d="M12 20s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 5c-2.5 4.5-9.5 9-9.5 9z" fill="currentColor" />,
+  migraine: (
+    <g stroke="currentColor" strokeWidth={1.8} fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="11" r="7.5" />
+      <path d="M9.5 8l1.5 3-2 1.2 3 3.3" />
+    </g>
+  ),
+  pelvic: (
+    <g stroke="currentColor" strokeWidth={1.8} fill="none" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M5 5h14" />
+      <path d="M5 5v3c0 5 2.5 9 7 11 4.5-2 7-6 7-11V5" />
+    </g>
+  ),
 };
 
 export function ConditionIcon({ icon, size = 24, className }: { icon: IconKey; size?: number; className?: string }) {

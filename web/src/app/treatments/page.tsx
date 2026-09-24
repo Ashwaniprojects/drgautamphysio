@@ -11,7 +11,7 @@ import { treatments } from "@/lib/data/treatments";
 export const metadata: Metadata = {
   title: "How We Treat You | Dr. Gautam's Physio & Rehab Centre",
   description:
-    "Physiotherapy, chiropractic, osteopathy, manual therapy, dry needling, cupping, cranio-sacral therapy, and visceral manipulation from Dr. S.K. Gautam in Lucknow.",
+    "Chiropractic, osteopathy, manual therapy, dry needling, cupping, craniosacral technique, and other advanced techniques from Dr. S.K. Gautam in Lucknow.",
 };
 
 export default function TreatmentsPage() {
@@ -20,7 +20,7 @@ export default function TreatmentsPage() {
       <TopBar />
       <Navbar />
       <main className="flex-1">
-        <PageHeader eyebrow="How We Treat You" title="Eight hands-on approaches, one standard of care">
+        <PageHeader eyebrow="How We Treat You" title="Eleven advanced techniques, chosen at assessment">
           Dr. Gautam chooses the approach based on your assessment, not the other way around. These
           are the techniques he draws from.
         </PageHeader>

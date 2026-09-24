@@ -26,7 +26,7 @@ export function PatientStories() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-5">
         {placeholderReviews.map((r) => (
-          <div key={r.condition} className="bg-white rounded-2xl p-7 flex flex-col gap-3.5">
+          <div key={r.condition} className="bg-white border border-ink/10 rounded-2xl p-7 flex flex-col gap-3.5">
             <div className="flex gap-0.5">
               {Array.from({ length: 5 }).map((_, i) => (
                 <StarIcon key={i} size={14} className="text-accent" />

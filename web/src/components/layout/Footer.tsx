@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { clinics } from "@/lib/data/clinics";
 import { siteConfig } from "@/lib/site-config";
+import { doctor } from "@/lib/data/doctor";
 
 export function Footer() {
   return (
@@ -18,7 +19,7 @@ export function Footer() {
             <span className="font-display text-[17px] font-semibold">Dr. Gautam&apos;s Physio</span>
           </div>
           <p className="text-sm leading-relaxed text-paper/70 max-w-xs">
-            Hands-on physiotherapy, chiropractic and osteopathic care across 3 Lucknow locations.
+            {doctor.positioning.join(" · ")}. Hands-on care across 3 Lucknow locations.
           </p>
           <div className="flex gap-3 mt-1">
             {["f", "in", "Yt"].map((label) => (
@@ -55,7 +56,8 @@ export function Footer() {
 
         <div className="flex flex-col gap-3">
           <span className="text-[13px] font-bold tracking-[0.08em] uppercase text-paper/60">Get in Touch</span>
-          <span className="text-sm text-paper/85">{siteConfig.clinicPhoneDisplay}</span>
+          <a href={siteConfig.clinicPhoneHref} className="text-sm text-paper/85">{siteConfig.clinicPhoneDisplay}</a>
+          <a href={`mailto:${siteConfig.clinicEmail}`} className="text-sm text-paper/85">{siteConfig.clinicEmail}</a>
           <a href={siteConfig.whatsappHref} className="text-sm text-paper/85">WhatsApp Us</a>
           <Button href="/book" className="mt-1 w-fit !px-5 !py-2.5 text-sm">
             Book Appointment

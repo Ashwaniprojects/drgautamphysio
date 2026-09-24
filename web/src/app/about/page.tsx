@@ -6,6 +6,7 @@ import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Button } from "@/components/ui/Button";
 import { CheckIcon } from "@/components/icons";
+import { doctor } from "@/lib/data/doctor";
 
 export const metadata: Metadata = {
   title: "About Dr. S.K. Gautam | Dr. Gautam's Physio & Rehab Centre",
@@ -18,20 +19,23 @@ export default function AboutPage() {
       <TopBar />
       <Navbar />
       <main className="flex-1">
-        <PageHeader eyebrow="About" title="Dr. S.K. Gautam">
-          Physiotherapist, chiropractor and osteopath treating patients across 3 Lucknow clinics.
+        <PageHeader eyebrow="About" title={`${doctor.name} ${doctor.suffix}`}>
+          {doctor.positioning.join(" · ")}, treating patients across 3 Lucknow clinics.
         </PageHeader>
 
         <div className="px-6 md:px-22 py-12 md:py-16 flex flex-col lg:flex-row gap-12 lg:gap-16">
           <div className="flex-1 max-w-[400px] flex flex-col gap-5">
             <div className="aspect-[4/5] bg-tint rounded-2xl border-[1.5px] border-dashed border-primary/35 flex items-center justify-center text-center p-8">
-              <span className="text-sm text-primary font-semibold">[PHOTO: Dr. Gautam headshot]</span>
+              <span className="text-sm text-primary font-semibold">[PHOTO: {doctor.name} headshot]</span>
             </div>
             <div className="bg-white border border-ink/10 rounded-2xl p-5 flex flex-col gap-3">
               <span className="text-sm font-semibold text-ink">Qualifications &amp; credentials</span>
-              <span className="text-sm text-ink/55 leading-relaxed">
-                [Degrees, professional body memberships and years in practice pending, requirements checklist §A]
-              </span>
+              <ul className="flex flex-col gap-1.5">
+                {doctor.qualifications.map((q) => (
+                  <li key={q} className="text-sm text-ink/65 leading-relaxed">{q}</li>
+                ))}
+              </ul>
+              <span className="text-xs text-ink/45 pt-2 border-t border-ink/10 mt-1">{doctor.registration}</span>
             </div>
           </div>
 
@@ -39,14 +43,16 @@ export default function AboutPage() {
             <div className="flex flex-col gap-3">
               <h2 className="font-display text-2xl font-semibold text-ink">Background</h2>
               <p className="text-[15px] leading-relaxed text-ink/70">
-                [Dr. Gautam&apos;s professional bio, two to three paragraphs covering his training, years in
-                practice, and what he specializes in, is pending. Once provided, or drafted from a call per
-                requirements checklist §A, it replaces this placeholder.]
+                {doctor.name} {doctor.suffix} is a {doctor.positioning.join(", ").toLowerCase()} practitioner
+                registered with the Indian Association of Physiotherapists ({doctor.registration}). His
+                training spans a PhD scholarship, an M.P.T. in Neuro physiotherapy, an Osteopathy fellowship
+                in Australia, and certifications across manual therapy, cupping, dry needling and craniosacral
+                technique, among others listed alongside.
               </p>
               <p className="text-[15px] leading-relaxed text-ink/70">
-                Dr. Gautam&apos;s Physio &amp; Rehab Centre has treated patients across Lucknow since [YEAR
-                founded, pending checklist §A], with a current base of 500+ patient reviews across Google
-                and JustDial.
+                [A narrative bio in Dr. Gautam&apos;s own words, and the year the practice was founded, is
+                pending, requirements checklist §A. The credentials above are already confirmed from his
+                professional documents.]
               </p>
             </div>
 
@@ -78,6 +84,9 @@ export default function AboutPage() {
 
             <div className="flex flex-wrap gap-3">
               <Button href="/book">Book Appointment</Button>
+              <Button href="/treatments" variant="secondary">
+                See Techniques &amp; Approach
+              </Button>
               <Button href="/clinics" variant="secondary">
                 See Our Clinics
               </Button>

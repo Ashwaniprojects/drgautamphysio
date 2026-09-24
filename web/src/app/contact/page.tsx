@@ -30,8 +30,13 @@ export default function ContactPage() {
             <div className="bg-tint rounded-2xl p-6 flex flex-col gap-3">
               <div className="flex items-center gap-3">
                 <PhoneIcon size={18} className="text-primary" />
-                <span className="text-[15px] font-semibold text-ink">{siteConfig.clinicPhoneDisplay}</span>
+                <a href={siteConfig.clinicPhoneHref} className="text-[15px] font-semibold text-ink">
+                  {siteConfig.clinicPhoneDisplay}
+                </a>
               </div>
+              <a href={`mailto:${siteConfig.clinicEmail}`} className="text-[15px] font-semibold text-ink">
+                {siteConfig.clinicEmail}
+              </a>
               <a href={siteConfig.whatsappHref} className="text-[15px] font-semibold text-primary">
                 WhatsApp Us
               </a>

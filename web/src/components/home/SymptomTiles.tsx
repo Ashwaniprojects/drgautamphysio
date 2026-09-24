@@ -5,7 +5,7 @@ import { conditions } from "@/lib/data/conditions";
 
 export function SymptomTiles() {
   return (
-    <section id="conditions" className="bg-tint px-6 md:px-22 py-14 md:py-22">
+    <section id="conditions" className="bg-paper px-6 md:px-22 py-14 md:py-22">
       <div className="flex flex-col gap-2.5 max-w-2xl mb-10">
         <span className="text-[13px] font-bold tracking-[0.12em] uppercase text-primary">
           What brings you here
@@ -15,12 +15,12 @@ export function SymptomTiles() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
         {conditions.map((c) => (
           <Link
             key={c.slug}
             href={`/conditions/${c.slug}`}
-            className="bg-white rounded-2xl p-5 md:p-6 flex flex-col gap-3.5 hover:shadow-md transition-shadow"
+            className="bg-white border border-ink/10 rounded-2xl p-5 md:p-6 flex flex-col gap-3.5 hover:shadow-md hover:border-primary/30 transition-all"
           >
             <span className="w-12 h-12 md:w-13 md:h-13 rounded-[14px] bg-tint flex items-center justify-center text-primary">
               <ConditionIcon icon={c.icon} />

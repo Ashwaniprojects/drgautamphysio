@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/Button";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { StarIcon } from "@/components/icons";
 import { siteConfig } from "@/lib/site-config";
+import { doctor } from "@/lib/data/doctor";
 
 export function Hero() {
   return (
@@ -9,20 +10,28 @@ export function Hero() {
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-18">
         <div className="flex-1 flex flex-col gap-5 max-w-xl">
           <span className="text-[13px] font-bold tracking-[0.12em] uppercase text-primary">
-            Trusted in Lucknow since [YEAR]
+            Physiotherapy &amp; Rehabilitation, Lucknow
           </span>
           <h1 className="font-display text-[38px] md:text-[52px] font-semibold leading-[1.12] text-ink">
-            3 Lucknow clinics. 500+ patient reviews. Real relief, no surgery, no meds.
+            Move better. Feel stronger. Live without limitation.
           </h1>
           <p className="text-[17px] md:text-[18px] leading-relaxed text-ink/70 max-w-[500px]">
-            Hands-on physiotherapy, chiropractic and osteopathic care from Dr. S.K. Gautam, with a
-            treatment plan built around how you actually recover, not a generic protocol.
+            Personalized physiotherapy, rehabilitation and hands-on care by {doctor.name} {doctor.suffix},
+            helping patients manage pain, improve movement and return to everyday life.
           </p>
           <div className="flex flex-wrap items-center gap-4 mt-2">
             <Button href="/book">Book Appointment</Button>
             <WhatsAppButton />
           </div>
-          <div className="flex items-center gap-1.5 mt-1.5">
+          <div className="flex flex-col gap-1.5 mt-2 pt-4 border-t border-ink/10">
+            <span className="text-sm font-semibold text-ink">
+              {doctor.name} {doctor.suffix}
+            </span>
+            <span className="text-[13px] text-ink/55">
+              PhD Scholar &middot; M.P.T. Neuro &middot; Fellowship in Osteopathy, Australia
+            </span>
+          </div>
+          <div className="flex items-center gap-1.5 mt-1">
             {Array.from({ length: 5 }).map((_, i) => (
               <StarIcon key={i} size={15} className="text-accent" />
             ))}
@@ -35,7 +44,7 @@ export function Hero() {
         <div className="flex-1 relative w-full max-w-[560px] h-[320px] md:h-[420px]">
           <div className="absolute inset-0 bg-tint rounded-3xl border-[1.5px] border-dashed border-primary/35 flex items-center justify-center text-center p-10">
             <span className="text-sm text-primary font-semibold">
-              [PHOTO: Dr. Gautam with a patient at the Subhash Marg clinic]
+              [PHOTO: {doctor.name} treating a patient at the Subhash Marg clinic]
             </span>
           </div>
           <div className="absolute -left-4 md:-left-7 bottom-6 md:bottom-9 bg-white rounded-2xl px-5 py-4 md:px-6 md:py-5 shadow-[0_16px_40px_rgba(16,30,28,0.16)] w-[210px] md:w-[240px]">

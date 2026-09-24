@@ -38,12 +38,28 @@ in-UI message instead of a fake success state. To connect it:
    settings (`.env.local` is git-ignored and never reaches Vercel on its
    own).
 
+## Real client data
+
+Dr. Gautam's verified qualifications, registration number, real phone
+(`+91 94152 06444`) and email (`gautamsphysio@gmail.com`) are confirmed
+from his credential documents (2026-09-24) and live in
+`src/lib/data/doctor.ts` and `src/lib/site-config.ts`. The WhatsApp Business
+number is still the one exception, checklist §E specifically needs a number
+not already active on personal WhatsApp, and that hasn't been confirmed for
+the helpline number, so `siteConfig.whatsappHref` stays a placeholder.
+
+The homepage leads with Dr. Gautam's credentials (Doctor Authority section)
+before conditions and clinics, per the doctor-first hierarchy: expertise,
+then patient problem, then treatment approach, then proof, then locations.
+
 ## What's built vs. pending
 
-Built: homepage, all 7 condition pages, Book Appointment (wired to
-Supabase), Treatments, About, Our Clinics, Patient Stories, Blog index, and
-Contact (form has a honest fallback until a sending email address exists,
-checklist §E).
+Built: homepage (doctor-first hierarchy), all 9 condition pages (7 original
+plus Migraine and Pelvic Floor Rehab, added once the real clinical scope
+became clear), Book Appointment (wired to Supabase), Treatments (the 11
+verified techniques), About (full credential grid), Our Clinics, Patient
+Stories, Blog index, and Contact (the form opens a pre-filled email via
+`mailto:` since a real address now exists; still not a backend-sent form).
 
 Not yet built: individual blog articles (the existing sciatica article
 needs migrating from the current site, source content not yet in this

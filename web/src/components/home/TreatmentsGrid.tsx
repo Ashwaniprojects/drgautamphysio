@@ -5,15 +5,19 @@ import { treatments } from "@/lib/data/treatments";
 
 export function TreatmentsGrid() {
   return (
-    <section id="treatments" className="bg-tint px-6 md:px-22 py-14 md:py-22">
+    <section id="treatments" className="bg-paper px-6 md:px-22 py-14 md:py-22">
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
         <div className="flex flex-col gap-2.5 max-w-2xl">
           <span className="text-[13px] font-bold tracking-[0.12em] uppercase text-primary">
-            How we treat you
+            Advanced techniques
           </span>
           <h2 className="font-display text-[28px] md:text-[36px] font-semibold text-ink">
-            Eight approaches, one hands-on standard of care
+            Personalized to your condition, not applied by default
           </h2>
+          <p className="text-[15px] text-ink/60">
+            Selected at assessment, based on what you actually need. Dr. Gautam draws from these
+            eleven approaches.
+          </p>
         </div>
         <Link href="/treatments" className="inline-flex items-center gap-1.5 text-primary text-[15px] font-semibold shrink-0">
           See all treatments <ArrowRightIcon size={15} />
@@ -22,7 +26,7 @@ export function TreatmentsGrid() {
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mb-8">
         {treatments.map((t) => (
-          <div key={t.name} className="bg-white rounded-2xl p-5 flex flex-col gap-2">
+          <div key={t.name} className="bg-white border border-ink/10 rounded-2xl p-5 flex flex-col gap-2">
             <span className="text-[15px] md:text-base font-semibold text-ink">{t.name}</span>
             <span className="text-[13px] text-ink/55 leading-relaxed">{t.description}</span>
           </div>
