@@ -38,8 +38,7 @@ export function Footer() {
           <span className="text-[13px] font-bold tracking-[0.08em] uppercase text-paper/60">Our Clinics</span>
           {clinics.map((c) => (
             <Link key={c.slug} href="/clinics" className="text-sm text-paper/85">
-              {c.name}
-              {c.area && c.tag !== "Own clinic" ? `, ${c.area}` : ""}
+              {c.name}, {c.area}
             </Link>
           ))}
         </div>

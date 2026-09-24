@@ -6,6 +6,7 @@ import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { StarIcon } from "@/components/icons";
 import { conditions } from "@/lib/data/conditions";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Patient Stories | Dr. Gautam's Physio & Rehab Centre",
@@ -28,8 +29,9 @@ export default function StoriesPage() {
       <Navbar />
       <main className="flex-1">
         <PageHeader eyebrow="Patient Stories" title="In their own words">
-          4.8 average across 391+ reviews on Google and JustDial. Named reviews below are pending
-          signed patient consent, see requirements checklist §D.
+          {siteConfig.googleRating} average across {siteConfig.googleReviewCount}+ Google reviews, plus{" "}
+          {siteConfig.justdialRating} from {siteConfig.justdialReviewCount}+ ratings on JustDial. Named
+          reviews below are pending signed patient consent, see requirements checklist §D.
         </PageHeader>
 
         <div className="px-6 md:px-22 py-12 md:py-16">

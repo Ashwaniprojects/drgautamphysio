@@ -36,7 +36,7 @@ export function Hero() {
               <StarIcon key={i} size={15} className="text-accent" />
             ))}
             <span className="text-sm text-ink/60 ml-1">
-              4.8 average &middot; 391+ verified reviews on Google &amp; JustDial
+              {siteConfig.googleRating} average &middot; {siteConfig.googleReviewCount}+ verified reviews across our 3 clinics on Google
             </span>
           </div>
         </div>
@@ -49,10 +49,10 @@ export function Hero() {
           </div>
           <div className="absolute -left-4 md:-left-7 bottom-6 md:bottom-9 bg-white rounded-2xl px-5 py-4 md:px-6 md:py-5 shadow-[0_16px_40px_rgba(16,30,28,0.16)] w-[210px] md:w-[240px]">
             <span className="font-display text-2xl md:text-3xl font-semibold text-ink leading-none block">
-              4.8★
+              {siteConfig.googleRating}★
             </span>
             <span className="text-[12.5px] md:text-[13px] text-ink/55 mt-1 block">
-              {siteConfig.reviewSummary.replace("4.8★ · ", "")} &middot; Google &amp; JustDial verified
+              {siteConfig.googleReviewCount}+ reviews &middot; verified on Google
             </span>
           </div>
         </div>

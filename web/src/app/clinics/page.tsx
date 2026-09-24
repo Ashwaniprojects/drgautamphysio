@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Button } from "@/components/ui/Button";
-import { ClockIcon, PinIcon } from "@/components/icons";
+import { ClockIcon, PinIcon, PhoneIcon, StarIcon } from "@/components/icons";
 import { clinics } from "@/lib/data/clinics";
 
 export const metadata: Metadata = {
@@ -41,15 +41,27 @@ export default function ClinicsPage() {
                   </span>
                 </div>
                 <p className="text-[15px] leading-relaxed text-ink/65">{c.blurb}</p>
+                <div className="flex items-center gap-1.5">
+                  <StarIcon size={15} className="text-accent" />
+                  <span className="text-sm font-semibold text-ink">{c.rating}</span>
+                  <span className="text-sm text-ink/55">({c.reviewCount} Google reviews)</span>
+                </div>
                 <div className="flex flex-col gap-2 text-sm text-ink/60">
-                  <div className="flex items-center gap-2">
-                    <PinIcon size={15} />
-                    {c.area || "Address pending, requirements checklist §B"}
+                  <div className="flex items-start gap-2">
+                    <PinIcon size={15} className="shrink-0 mt-0.5" />
+                    {c.address}
                   </div>
                   <div className="flex items-center gap-2">
-                    <ClockIcon size={15} />
+                    <PhoneIcon size={15} />
+                    <a href={c.phoneHref} className="hover:text-primary">{c.phoneDisplay}</a>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <ClockIcon size={15} className="shrink-0 mt-0.5" />
                     {c.hours}
                   </div>
+                  {c.hoursNote && (
+                    <span className="text-xs text-ink/40 pl-[23px]">{c.hoursNote}</span>
+                  )}
                 </div>
                 <div className="h-[160px] bg-white border border-ink/10 rounded-xl flex items-center justify-center">
                   <span className="text-xs text-ink/40">[Map embed pending exact address confirmation]</span>

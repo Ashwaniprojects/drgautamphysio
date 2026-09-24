@@ -3,7 +3,7 @@
 Go through this with Dr. Gautam (and Sunita Mam where noted) before content and build are finalized. Grouped so it can be done in one sitting or split across calls.
 
 ## A. Doctor & credibility content
-- [ ] Full name, degree(s)/qualifications, years in practice
+- [x] Full name, degree(s)/qualifications: confirmed from his credential documents (2026-09-24), see `web/src/lib/data/doctor.ts`. Years in practice still needed
 - [ ] Year the clinic/practice was founded (for a "since [year]" claim)
 - [ ] Professional bio (2–3 paragraphs), or permission to draft one from a call
 - [ ] High-res headshot photo
@@ -11,7 +11,8 @@ Go through this with Dr. Gautam (and Sunita Mam where noted) before content and 
 - [ ] Short intro video, if he'll record one (even on a phone); a meaningful trust lift for the About page
 
 ## B. Locations, hours & the booking calendar
-- [ ] Exact days/hours he's physically present at each of the 3 locations
+- [x] Addresses for all 3 locations: confirmed from each clinic's own Google Business Profile (2026-09-24), see `web/src/lib/data/clinics.ts`
+- [ ] Exact days/hours he's physically present at each of the 3 locations. Subhash Marg has a JustDial-sourced weekly schedule (Mon-Sat 9 AM-9 PM, Sun 9 AM-2 PM) that disagrees with Google's own listing by an hour; confirm which is right. Neera and Medox only show the *hospital's* hours, not which days Dr. Gautam specifically consults there
 - [ ] Typical session length per location (this sizes the slots in the booking widget)
 - [ ] Real photos: Subhash Marg exterior, interior, reception. It's his own branded space, worth doing properly
 - [ ] For Medox Hospital and Neera Hospital: can we photograph anything, or exterior/signage/map imagery only?
@@ -26,13 +27,13 @@ Go through this with Dr. Gautam (and Sunita Mam where noted) before content and 
 - [ ] Does he want per-session/package pricing shown on the site, or "call for pricing"?
 
 ## D. Reviews & testimonials
-- [ ] Confirm the exact current review count/rating on Google Maps, to add to the 4.8★/391 reviews already confirmed on JustDial. Needed before the homepage uses any number as its hero claim
+- [x] Google review counts: confirmed per-clinic from each Google Business Profile (2026-09-24): Subhash Marg 4.9★ (190), Neera Hospital 4.9★ (466), Medox Hospital 5.0★ (73), 729 total. JustDial separately shows 5.0★ from 460 ratings. Both now live on the site, see `web/src/lib/site-config.ts`
 - [ ] Permission to pull and display real reviews from Google/JustDial by name on the site
 - [ ] 3–5 patients willing to be named and photographed for a testimonial feature; get a signed one-line consent per patient
 - [ ] Any recovery/case-study stories he can share in his own words (specific, not generic)
 
 ## E. Access: build is blocked without these
-- [ ] Domain registrar login for drgautamphysio.com (or willingness to update DNS)
+- [ ] Domain registrar login for drgautamphysio.com (or willingness to update DNS). Confirmed live and linked from all 3 Google Business listings (2026-09-24), so it's actively in use; still need registrar access to point it at the new build
 - [ ] Current hosting provider and login, or confirmation a new host is needed
 - [ ] Google Business Profile: claimed? Admin access or an invite
 - [ ] Facebook Page admin access

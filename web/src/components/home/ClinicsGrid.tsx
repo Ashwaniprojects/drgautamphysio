@@ -1,4 +1,4 @@
-import { ClockIcon } from "@/components/icons";
+import { PinIcon, StarIcon } from "@/components/icons";
 import { Button } from "@/components/ui/Button";
 import { clinics } from "@/lib/data/clinics";
 
@@ -27,10 +27,14 @@ export function ClinicsGrid() {
                   {c.tag}
                 </span>
               </div>
-              <span className="text-[13.5px] text-ink/65">{c.area}</span>
-              <div className="flex items-center gap-1.5 text-[13px] text-ink/55">
-                <ClockIcon size={13} />
-                {c.hours}
+              <div className="flex items-start gap-1.5 text-[13px] text-ink/55">
+                <PinIcon size={13} className="shrink-0 mt-0.5" />
+                {c.address}
+              </div>
+              <div className="flex items-center gap-1">
+                <StarIcon size={13} className="text-accent" />
+                <span className="text-[13px] font-semibold text-ink">{c.rating}</span>
+                <span className="text-[13px] text-ink/55">({c.reviewCount} Google reviews)</span>
               </div>
               <Button href="/book" variant="solid-teal" className="mt-1.5 w-full !px-4 !py-2.75 text-sm">
                 Book at {c.name}

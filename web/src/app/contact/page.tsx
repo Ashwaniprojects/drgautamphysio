@@ -52,10 +52,14 @@ export default function ContactPage() {
                 </div>
                 <div className="flex items-start gap-2 text-sm text-ink/60">
                   <PinIcon size={15} className="shrink-0 mt-0.5" />
-                  {c.area || "Address pending, requirements checklist §B"}
+                  {c.address}
                 </div>
                 <div className="flex items-center gap-2 text-sm text-ink/60">
-                  <ClockIcon size={15} />
+                  <PhoneIcon size={15} />
+                  <a href={c.phoneHref} className="hover:text-primary">{c.phoneDisplay}</a>
+                </div>
+                <div className="flex items-start gap-2 text-sm text-ink/60">
+                  <ClockIcon size={15} className="shrink-0 mt-0.5" />
                   {c.hours}
                 </div>
                 <div className="h-[120px] bg-tint rounded-xl flex items-center justify-center">

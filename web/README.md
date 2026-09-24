@@ -52,6 +52,15 @@ The homepage leads with Dr. Gautam's credentials (Doctor Authority section)
 before conditions and clinics, per the doctor-first hierarchy: expertise,
 then patient problem, then treatment approach, then proof, then locations.
 
+Each clinic's real address, its own phone number, and its own Google
+review count/rating (confirmed from its individual Google Business Profile,
+2026-09-24) live in `src/lib/data/clinics.ts`. Hours are a genuine open
+question, not just an unfilled placeholder: Subhash Marg's JustDial-sourced
+weekly schedule disagrees with its own Google listing by an hour, and Neera
+/ Medox only expose the *hospital's* hours, not which days Dr. Gautam
+specifically consults there. See the `hoursNote` field and
+`01-requirements-checklist.md` §B.
+
 ## What's built vs. pending
 
 Built: homepage (doctor-first hierarchy), all 9 condition pages (7 original
