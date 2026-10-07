@@ -69,7 +69,7 @@ export default async function ConditionPage({
                 </a>
               </div>
             </div>
-            <div className="flex-1 w-full h-[220px] bg-white rounded-[20px] border-[1.5px] border-dashed border-primary/35 flex items-center justify-center text-center p-6">
+            <div className="lg:flex-1 shrink-0 w-full h-[220px] bg-white rounded-[20px] border-[1.5px] border-dashed border-primary/35 flex items-center justify-center text-center p-6">
               <span className="text-[13.5px] text-primary font-semibold">
                 [PHOTO: Dr. Gautam assessing a patient&apos;s condition]
               </span>

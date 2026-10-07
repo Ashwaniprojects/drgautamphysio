@@ -3,11 +3,11 @@
 Go through this with Dr. Gautam (and Sunita Mam where noted) before content and build are finalized. Grouped so it can be done in one sitting or split across calls.
 
 ## A. Doctor & credibility content
-- [x] Full name, degree(s)/qualifications: confirmed from his credential documents (2026-09-24), see `web/src/lib/data/doctor.ts`. Years in practice still needed
-- [ ] Year the clinic/practice was founded (for a "since [year]" claim)
-- [ ] Professional bio (2–3 paragraphs), or permission to draft one from a call
-- [ ] High-res headshot photo
-- [ ] Any awards, certifications, or professional body memberships worth naming
+- [x] Full name, degree(s)/qualifications, years in practice: confirmed from his CV (2026-10-07), 18+ years, clinical since Sep 2008. See `web/src/lib/data/doctor.ts`
+- [ ] Year the clinic/practice (Dr. Gautam's Physio & Rehab Centre) was founded. The CV says "Founder/Director" but gives no year
+- [x] Professional bio: drafted from the CV's own summary (About page). A narrative version in his own words is still welcome but no longer blocking
+- [~] Headshot: one portrait received (`WhatsApp Image 2026-10-04 at 1.35.44 PM`, 1600px, looks upscaled/soft). Used on the site; a proper high-res shot is still better. Please confirm it's the photo he wants public
+- [x] Awards, certifications, memberships: all in the CV, plus the IAP Significant Contribution Award 2026 (letter, certificate and ceremony photo received; not on the CV yet)
 - [ ] Short intro video, if he'll record one (even on a phone); a meaningful trust lift for the About page
 
 ## B. Locations, hours & the booking calendar
@@ -54,3 +54,12 @@ Go through this with Dr. Gautam (and Sunita Mam where noted) before content and 
 ## H. Consent & boundaries
 - [ ] Signed/written consent for every patient photo or testimonial used publicly
 - [ ] Anything he explicitly does not want mentioned or shown
+
+## I. Reference files review (2026-10-07): confirm these before launch
+Reviewed the full `reference files/` folder (CV, 4 clinic/ceremony photos, 4 WhatsApp images, 4 `file_0000...png` images). These need a quick confirmation with Dr. Gautam; the site currently uses the safer option in each case.
+- [ ] **Phone number typo?** CV prints `+91-9415306444`; his brochure and Subhash Marg's Google listing print `9415206444`. Site uses `9415206444`. Confirm which is right
+- [ ] **Which email is public?** CV prints `dr.gautam444@gmail.com`; brochure prints `gautamsphysio@gmail.com`. Site uses the clinic one. The CV's second mobile (`8795971355`) is intentionally not published
+- [ ] **Credential spellings.** FNMT is "Neuro *Myo*skeletal Techniques" on the CV (an earlier transcription said "Musculoskeletal"); FDM is "European" on the CV vs "Germany" on the brochure. Site follows the CV. K-CAT and COMT are on the brochure but not the CV, so they stay unexpanded. Is that his preferred wording?
+- [ ] **Second doctor?** The clinic signboard visible in the Google Business photo appears to list a second clinician (Dr. Sunita Gautam, women's health). If she treats patients, the Women's Health and Pelvic Floor pages should say so. Not confirmed from this folder
+- [ ] **Photos to retake.** No real photos of him treating a patient were in the folder. The four `file_0000...png` images appear AI-generated (one shows an awards plaque reading "DR. SURENDRA KUMAR GUPTA", other frames are illegible) and are not used. A short phone shoot at Subhash Marg (treating a patient with consent, reception, exterior) would replace the hero's portrait
+- [ ] **Not used, and why:** `DSC_1968` and the dignitary photo (a public official with a bouquet implies endorsement); `DSC_5976` (the trophy is Dr. Tripti Pathak's); `IMG-20260927-WA0019` (group photo of other attendees); the "Vision Change" certificate photo (garbled text, unrelated to physiotherapy); the IAP award letter (kept as proof only, it contains a third party's email)

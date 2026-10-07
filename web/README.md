@@ -40,10 +40,19 @@ in-UI message instead of a fake success state. To connect it:
 
 ## Real client data
 
-Dr. Gautam's verified qualifications, registration number, real phone
-(`+91 94152 06444`) and email (`gautamsphysio@gmail.com`) are confirmed
-from his credential documents (2026-09-24) and live in
-`src/lib/data/doctor.ts` and `src/lib/site-config.ts`. The WhatsApp Business
+Dr. Gautam's qualifications, career, awards and registration come from his
+CV (the primary source, reviewed 2026-10-07) and live in
+`src/lib/data/doctor.ts`. His real phone (`+91 94152 06444`) and the clinic
+email (`gautamsphysio@gmail.com`) come from his brochure and live in
+`src/lib/site-config.ts`. Where the CV and brochure disagree (phone digit,
+email, FNMT/FDM wording, K-CAT/COMT) the site uses the conservative value and
+the conflict is logged in `01-requirements-checklist.md` §I.
+
+Two photos from `reference files/` are used: the hero/About portrait
+(`public/images/dr-gautam-portrait.jpg`) and the IAP Excellence Award 2026
+ceremony photo (`public/images/iap-excellence-award-2026.jpg`). The raw
+folder is gitignored because it holds personal numbers, third-party photos
+and the CV itself. The WhatsApp Business
 number is still the one exception, checklist §E specifically needs a number
 not already active on personal WhatsApp, and that hasn't been confirmed for
 the helpline number, so `siteConfig.whatsappHref` stays a placeholder.

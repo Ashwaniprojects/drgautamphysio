@@ -58,7 +58,8 @@ export const clinics: Clinic[] = [
     phoneHref: "tel:+918787282889",
     rating: 4.9,
     reviewCount: 466,
-    blurb: "Dr. Gautam also consults here on select days. Good if this side of Lucknow is closer for you.",
+    blurb:
+      "Dr. Gautam has been part of this hospital's physiotherapy care since 2009, in the outpatient clinic and the wards. Good if this side of Lucknow is closer for you.",
     photoPlaceholder: "Neera Hospital exterior/signage, Mahanagar/Aliganj",
     hours: "Call to confirm consulting days",
     hoursNote:
@@ -74,7 +75,8 @@ export const clinics: Clinic[] = [
     phoneHref: "tel:+918787282889",
     rating: 5.0,
     reviewCount: 73,
-    blurb: "Dr. Gautam also consults here on select days. Good if Jankipuram is closer for you.",
+    blurb:
+      "Dr. Gautam has provided physiotherapy care here since 2019, for both outpatients and inpatients. Good if Jankipuram is closer for you.",
     photoPlaceholder: "Medox Hospital exterior/signage, Jankipuram",
     hours: "Call to confirm consulting days",
     hoursNote:

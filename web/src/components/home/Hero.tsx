@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { StarIcon } from "@/components/icons";
@@ -25,10 +26,10 @@ export function Hero() {
           </div>
           <div className="flex flex-col gap-1.5 mt-2 pt-4 border-t border-ink/10">
             <span className="text-sm font-semibold text-ink">
-              {doctor.name} {doctor.suffix}
+              {doctor.name} {doctor.suffix}, {doctor.title}
             </span>
             <span className="text-[13px] text-ink/55">
-              PhD Scholar &middot; M.P.T. Neuro &middot; Fellowship in Osteopathy, Australia
+              {doctor.yearsExperience} years in practice &middot; Ph.D. Scholar &middot; Fellowship in Osteopathy, Australia
             </span>
           </div>
           <div className="flex items-center gap-1.5 mt-1">
@@ -41,11 +42,16 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="flex-1 relative w-full max-w-[560px] h-[320px] md:h-[420px]">
-          <div className="absolute inset-0 bg-tint rounded-3xl border-[1.5px] border-dashed border-primary/35 flex items-center justify-center text-center p-10">
-            <span className="text-sm text-primary font-semibold">
-              [PHOTO: {doctor.name} treating a patient at the Subhash Marg clinic]
-            </span>
+        <div className="lg:flex-1 shrink-0 relative w-full max-w-[560px] h-[320px] md:h-[420px]">
+          <div className="absolute inset-0 bg-tint rounded-3xl overflow-hidden">
+            <Image
+              src="/images/dr-gautam-portrait.jpg"
+              alt={`${doctor.fullName}, ${doctor.title}`}
+              fill
+              priority
+              sizes="(min-width: 1024px) 560px, 100vw"
+              className="object-cover object-[50%_20%]"
+            />
           </div>
           <div className="absolute -left-4 md:-left-7 bottom-6 md:bottom-9 bg-white rounded-2xl px-5 py-4 md:px-6 md:py-5 shadow-[0_16px_40px_rgba(16,30,28,0.16)] w-[210px] md:w-[240px]">
             <span className="font-display text-2xl md:text-3xl font-semibold text-ink leading-none block">

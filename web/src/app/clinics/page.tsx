@@ -20,8 +20,8 @@ export default function ClinicsPage() {
       <Navbar />
       <main className="flex-1">
         <PageHeader eyebrow="Our Clinics" title="Come in wherever suits you">
-          One clinic Dr. Gautam owns and runs directly, plus two hospitals where he also consults on
-          select days.
+          One clinic Dr. Gautam owns and runs directly, plus two Lucknow hospitals where he has
+          practised for years: Neera Hospital since 2009 and Medox Hospital since 2019.
         </PageHeader>
 
         <div className="px-6 md:px-22 py-12 md:py-16 flex flex-col gap-10">
@@ -30,7 +30,7 @@ export default function ClinicsPage() {
               key={c.slug}
               className={`flex flex-col ${i % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-8 lg:gap-12 items-center`}
             >
-              <div className="flex-1 w-full h-[240px] md:h-[300px] bg-tint rounded-2xl border-[1.5px] border-dashed border-primary/35 flex items-center justify-center text-center p-8">
+              <div className="lg:flex-1 shrink-0 w-full h-[240px] md:h-[300px] bg-tint rounded-2xl border-[1.5px] border-dashed border-primary/35 flex items-center justify-center text-center p-8">
                 <span className="text-sm text-primary font-semibold">[PHOTO: {c.photoPlaceholder}]</span>
               </div>
               <div className="flex-1 flex flex-col gap-4">
