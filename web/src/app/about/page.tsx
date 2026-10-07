@@ -138,6 +138,40 @@ export default function AboutPage() {
                   Pacific Regional Conference, New Delhi.
                 </figcaption>
               </figure>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-start">
+                <figure className="flex flex-col gap-2.5">
+                  <div className="rounded-2xl overflow-hidden bg-tint border border-ink/10">
+                    <Image
+                      src="/images/iap-award-certificate-2026.jpg"
+                      alt={`Significant Contribution Award certificate conferred on ${doctor.fullName} (PT), World Physiotherapy AWP Regional Conference 2026`}
+                      width={986}
+                      height={1288}
+                      sizes="(min-width: 1024px) 390px, (min-width: 640px) 45vw, 100vw"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <figcaption className="text-sm text-ink/60">
+                    The Significant Contribution Award certificate, signed by the conference organising chair and
+                    secretary and the Chair of the World Physiotherapy AWP Region.
+                  </figcaption>
+                </figure>
+                <figure className="flex flex-col gap-2.5">
+                  <div className="rounded-2xl overflow-hidden bg-tint">
+                    <Image
+                      src="/images/physio-guide-3-conference.jpg"
+                      alt="Delegates with a commemorative plaque at the Physio Guide 3 National Conference"
+                      width={1000}
+                      height={1498}
+                      sizes="(min-width: 1024px) 390px, (min-width: 640px) 45vw, 100vw"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <figcaption className="text-sm text-ink/60">
+                    Physio Guide 3 National Conference, Aligarh (2025), where Dr. Gautam was a chairperson and
+                    received the Physio Ratan Award.
+                  </figcaption>
+                </figure>
+              </div>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {doctor.awards.map((a) => (
                   <li key={`${a.title}-${a.year}`} className="bg-tint rounded-xl p-4 flex flex-col gap-0.5">
@@ -152,6 +186,22 @@ export default function AboutPage() {
 
             <section className="flex flex-col gap-4">
               <h2 className="font-display text-2xl font-semibold text-ink">Conferences &amp; academic work</h2>
+              <figure className="flex flex-col gap-2.5">
+                <div className="rounded-2xl overflow-hidden bg-tint">
+                  <Image
+                    src="/images/iap-uttar-pradesh-event.jpg"
+                    alt="A programme of the Indian Association of Physiotherapists, Uttar Pradesh, with a bouquet being presented on stage"
+                    width={1800}
+                    height={1200}
+                    sizes="(min-width: 1024px) 800px, 100vw"
+                    className="w-full h-auto"
+                  />
+                </div>
+                <figcaption className="text-sm text-ink/60">
+                  A programme of the Indian Association of Physiotherapists, Uttar Pradesh, where Dr. Gautam
+                  serves as State Treasurer.
+                </figcaption>
+              </figure>
               <ul className="flex flex-col gap-2.5">
                 {doctor.academicContributions.map((c) => (
                   <li key={c} className="flex items-start gap-3">

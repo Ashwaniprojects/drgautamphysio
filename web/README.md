@@ -48,11 +48,14 @@ email (`gautamsphysio@gmail.com`) come from his brochure and live in
 email, FNMT/FDM wording, K-CAT/COMT) the site uses the conservative value and
 the conflict is logged in `01-requirements-checklist.md` §I.
 
-Two photos from `reference files/` are used: the hero/About portrait
-(`public/images/dr-gautam-portrait.jpg`) and the IAP Excellence Award 2026
-ceremony photo (`public/images/iap-excellence-award-2026.jpg`). The raw
-folder is gitignored because it holds personal numbers, third-party photos
-and the CV itself. The WhatsApp Business
+Five photos from `reference files/` are used, resized into `public/images/`:
+the hero/About portrait, the IAP Excellence Award 2026 ceremony photo and
+certificate, an IAP Uttar Pradesh programme photo and a Physio Guide 3
+conference photo. Dr. Gautam has authorized everything in that folder,
+including photos of other people. Captions describe the event only and name
+no one. The four AI-looking `file_0000...png` images are deliberately unused
+(checklist §I). The raw folder is gitignored because it holds personal
+numbers and the CV itself. The WhatsApp Business
 number is still the one exception, checklist §E specifically needs a number
 not already active on personal WhatsApp, and that hasn't been confirmed for
 the helpline number, so `siteConfig.whatsappHref` stays a placeholder.
