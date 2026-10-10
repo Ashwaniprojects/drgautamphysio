@@ -63,7 +63,7 @@ export default function ContactPage() {
                   {c.hours}
                 </div>
                 <div className="h-[120px] bg-tint rounded-xl flex items-center justify-center">
-                  <span className="text-xs text-primary/70">[Map embed pending exact address]</span>
+                  <PinIcon size={24} className="text-primary/30" />
                 </div>
               </div>
             ))}

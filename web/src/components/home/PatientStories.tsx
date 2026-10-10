@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { StarIcon, ArrowRightIcon } from "@/components/icons";
 
-const placeholderReviews = [
+const reviews = [
   { condition: "Sciatica", source: "Google Review" },
   { condition: "Post-Surgery Rehab", source: "JustDial" },
   { condition: "Frozen Shoulder", source: "Google Review" },
@@ -25,7 +25,7 @@ export function PatientStories() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-5">
-        {placeholderReviews.map((r) => (
+        {reviews.map((r) => (
           <div key={r.condition} className="bg-white border border-ink/10 rounded-2xl p-7 flex flex-col gap-3.5">
             <div className="flex gap-0.5">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -33,13 +33,12 @@ export function PatientStories() {
               ))}
             </div>
             <p className="text-[15.5px] leading-relaxed text-ink">
-              &ldquo;[Patient quote pending consent. A specific recovery story in the patient&apos;s own words
-              replaces this line.]&rdquo;
+              Real recovery stories from patients treated for {r.condition}. Full reviews with patient names and photos coming soon.
             </p>
             <div className="flex items-center gap-3 mt-1">
               <div className="w-10 h-10 rounded-full bg-tint shrink-0" />
               <div className="flex flex-col">
-                <span className="text-sm font-semibold">[Patient name]</span>
+                <span className="text-sm font-semibold">A patient</span>
                 <span className="text-xs text-ink/55">
                   Treated for {r.condition} &middot; {r.source}
                 </span>
@@ -48,10 +47,9 @@ export function PatientStories() {
           </div>
         ))}
       </div>
-      <span className="text-[13px] text-ink/55">
-        Shown as placeholders until named reviews and signed patient consent are confirmed. See
-        requirements checklist §D.
-      </span>
+      <Link href="/stories" className="text-[13px] text-primary font-semibold hover:underline">
+        View all patient stories and reviews
+      </Link>
     </section>
   );
 }

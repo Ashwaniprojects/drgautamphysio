@@ -17,8 +17,8 @@ export function ClinicsGrid() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
         {clinics.map((c) => (
           <div key={c.slug} className="bg-white rounded-2xl overflow-hidden flex flex-col">
-            <div className="h-[150px] bg-paper flex items-center justify-center border-b border-ink/5 px-4 text-center">
-              <span className="text-[12.5px] text-ink/55">[PHOTO: {c.photoPlaceholder}]</span>
+            <div className="h-[150px] bg-tint flex items-center justify-center">
+              <PinIcon size={36} className="text-primary/40" />
             </div>
             <div className="p-5 flex flex-col gap-2.5">
               <div className="flex items-center justify-between">

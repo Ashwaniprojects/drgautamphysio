@@ -63,8 +63,8 @@ export default function ClinicsPage() {
                     <span className="text-xs text-ink/40 pl-[23px]">{c.hoursNote}</span>
                   )}
                 </div>
-                <div className="h-[160px] bg-white border border-ink/10 rounded-xl flex items-center justify-center">
-                  <span className="text-xs text-ink/40">[Map embed pending exact address confirmation]</span>
+                <div className="h-[160px] bg-tint rounded-xl flex items-center justify-center">
+                  <PinIcon size={28} className="text-primary/30" />
                 </div>
                 <Button href="/book" variant="solid-teal" className="w-fit">
                   Book at {c.name}
