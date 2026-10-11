@@ -10,6 +10,9 @@ export function useReveal(options: { threshold?: number; rootMargin?: string; on
     const el = ref.current;
     if (!el) return;
 
+    const revealSelector = ".reveal, .reveal-left, .reveal-right, .reveal-scale";
+    const targets = [el, ...Array.from(el.querySelectorAll(revealSelector))];
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -24,7 +27,7 @@ export function useReveal(options: { threshold?: number; rootMargin?: string; on
       { threshold, rootMargin }
     );
 
-    observer.observe(el);
+    targets.forEach((t) => observer.observe(t));
     return () => observer.disconnect();
   }, [threshold, rootMargin, once]);
 

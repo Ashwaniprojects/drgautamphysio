@@ -2,6 +2,7 @@
 
 import { useReveal } from "@/hooks/useScrollReveal";
 import Link from "next/link";
+import Image from "next/image";
 import { PinIcon, StarIcon, ArrowRightIcon } from "@/components/icons";
 import { Button } from "@/components/ui/Button";
 import { clinics } from "@/lib/data/clinics";
@@ -31,20 +32,12 @@ export function ClinicsGrid() {
               key={c.slug}
               className={`reveal reveal-delay-${i + 1} card-shimmer group bg-white rounded-2xl overflow-hidden border border-ink/8 hover:border-primary/25 hover:shadow-[0_20px_50px_-12px_rgba(13,148,136,0.15)] transition-all duration-500`}
             >
-              {/* Map placeholder with gradient */}
+              {/* Clinic photo */}
               <div className="relative h-[140px] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-100 via-primary-50 to-primary-200/50 group-hover:from-primary-200/80 group-hover:to-primary-300/60 transition-all duration-500" />
-                {/* Stylized location pin */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative">
-                    <div className="w-14 h-14 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <PinIcon size={24} className="text-primary" />
-                    </div>
-                    <div className="absolute inset-0 w-14 h-14 rounded-full border-2 border-primary/20 animate-ping" style={{ animationDuration: "2.5s" }} />
-                  </div>
-                </div>
+                <Image src={c.photo} alt={`${c.name} — ${c.area}`} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 {/* Tag badge */}
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-3 left-3">
                   <span className="text-[11px] font-bold tracking-[0.06em] uppercase bg-white/90 backdrop-blur-sm text-primary px-3 py-1.5 rounded-full border border-primary/10">
                     {c.tag}
                   </span>

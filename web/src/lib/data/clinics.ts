@@ -9,6 +9,7 @@ export type Clinic = {
   rating: number;
   reviewCount: number;
   blurb: string;
+  photo: string;
   photoPlaceholder: string;
   /** Short, for compact UI (booking wizard, homepage cards). */
   hours: string;
@@ -43,6 +44,7 @@ export const clinics: Clinic[] = [
     reviewCount: 190,
     blurb:
       "The main clinic. Full assessment rooms, manual therapy space, and where most treatment programs run start to finish.",
+    photo: "/images/clinic-photo-treatment.jpg",
     photoPlaceholder: "Subhash Marg exterior & reception",
     hours: "Mon-Sat 9 AM to 9 PM · Sun 9 AM to 2 PM",
     hoursNote:
@@ -60,6 +62,7 @@ export const clinics: Clinic[] = [
     reviewCount: 466,
     blurb:
       "Dr. Gautam has been part of this hospital's physiotherapy care since 2009, in the outpatient clinic and the wards. Good if this side of Lucknow is closer for you.",
+    photo: "/images/clinic-photo-treatment.jpg",
     photoPlaceholder: "Neera Hospital exterior/signage, Mahanagar/Aliganj",
     hours: "Call to confirm consulting days",
     hoursNote:
@@ -77,6 +80,7 @@ export const clinics: Clinic[] = [
     reviewCount: 73,
     blurb:
       "Dr. Gautam has provided physiotherapy care here since 2019, for both outpatients and inpatients. Good if Jankipuram is closer for you.",
+    photo: "/images/clinic-photo-treatment.jpg",
     photoPlaceholder: "Medox Hospital exterior/signage, Jankipuram",
     hours: "Call to confirm consulting days",
     hoursNote:

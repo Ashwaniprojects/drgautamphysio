@@ -9,6 +9,7 @@ import { ArrowRightIcon, CheckIcon } from "@/components/icons";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { doctor } from "@/lib/data/doctor";
 import { siteConfig } from "@/lib/site-config";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Dr. S.K. Gautam | Best Chiropractor in Lucknow",
@@ -45,15 +46,12 @@ export default function AboutPage() {
         <div className="px-6 md:px-22 py-12 md:py-16 flex flex-col lg:flex-row gap-12 lg:gap-16">
           <aside className="lg:flex-1 max-w-[420px] flex flex-col gap-5">
             <ScrollReveal>
-              <div className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary-100 via-primary-50 to-tint border border-primary-200/40 flex items-center justify-center">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shadow-[0_12px_40px_rgba(13,148,136,0.25)]">
-                  <span className="font-display text-4xl font-bold text-paper">SG</span>
-                </div>
-                <div className="absolute bottom-5 left-5 right-5 bg-white/90 backdrop-blur-sm rounded-xl p-4 border border-primary-100/60">
-                  <span className="text-sm font-semibold text-ink block">{doctor.name} {doctor.suffix}</span>
-                  <span className="text-xs text-ink/55">{doctor.registration}</span>
-                </div>
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-ink/10 shadow-lg">
+                <Image src="/images/award-photo-world-physio-2026.jpg" alt="Dr. S.K. Gautam receiving the Significant Contribution Award at the World Physiotherapy Asia Western Pacific Regional Conference, New Delhi 2026" fill className="object-cover" priority />
               </div>
+              <p className="text-[11px] text-ink/45 mt-1.5 leading-relaxed">
+                Dr. Gautam receiving the Significant Contribution Award — World Physiotherapy Asia Western Pacific Regional Conference, New Delhi, 2026.
+              </p>
             </ScrollReveal>
 
             <ScrollReveal className="reveal-delay-1">
@@ -188,18 +186,25 @@ export default function AboutPage() {
               </ul>
             </ScrollReveal>
 
-            <ScrollReveal className="reveal-delay-1">
-              <div className="bg-gradient-to-br from-primary-50 to-tint rounded-2xl p-6 border border-primary-200/40 flex flex-col gap-2">
-                <div className="flex items-center gap-3">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                    <polygon points="5 3 19 12 5 21 5 3" />
-                  </svg>
-                  <span className="text-sm font-semibold text-ink">Introduction video</span>
-                </div>
-                <span className="text-sm text-ink/60 leading-relaxed">
-                  A short intro video is a meaningful trust lift here. Pending — available on{" "}
-                  <a href={siteConfig.youtubeHandle} target="_blank" rel="noopener" className="text-primary hover:underline">our YouTube channel</a>.
-                </span>
+            {/* Event photos gallery */}
+            <ScrollReveal>
+              <h2 className="font-display text-2xl font-semibold text-ink">Conferences &amp; events</h2>
+              <p className="text-[13px] text-ink/50 mb-4 -mt-1">A selection from national and regional physiotherapy conferences.</p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+                {[
+                  { src: "/images/iap-uttar-pradesh-event.jpg", alt: "IAP Uttar Pradesh chapter event" },
+                  { src: "/images/conference-group-photo.jpg", alt: "Conference group photo" },
+                  { src: "/images/physio-guide-3-conference.jpg", alt: "Physio Guide 3 conference" },
+                  { src: "/images/event-photo-2.jpg", alt: "Physiotherapy conference" },
+                  { src: "/images/event-photo-3.jpg", alt: "Professional conference" },
+                  { src: "/images/event-photo-4.jpg", alt: "Conference session" },
+                  { src: "/images/event-photo-5.jpg", alt: "Award ceremony" },
+                  { src: "/images/event-photo-6.jpg", alt: "Physiotherapy event" },
+                ].map((photo) => (
+                  <div key={photo.src} className="relative aspect-[4/3] rounded-xl overflow-hidden border border-ink/8 bg-ink/5">
+                    <Image src={photo.src} alt={photo.alt} fill className="object-cover hover:scale-105 transition-transform duration-500" />
+                  </div>
+                ))}
               </div>
             </ScrollReveal>
 

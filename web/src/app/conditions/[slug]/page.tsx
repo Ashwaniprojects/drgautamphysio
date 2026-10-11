@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/Button";
 import { CheckIcon, PinIcon } from "@/components/icons";
 import { conditions, getCondition } from "@/lib/data/conditions";
 import { clinics } from "@/lib/data/clinics";
+import { siteConfig } from "@/lib/site-config";
 
 export function generateStaticParams() {
   return conditions.map((c) => ({ slug: c.slug }));
@@ -65,7 +66,9 @@ export default async function ConditionPage({
               <div className="flex flex-wrap gap-3.5 mt-2">
                 <Button href="/book">Book an Assessment</Button>
                 <a
-                  href="#"
+                  href={siteConfig.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full text-[15.5px] font-semibold border-[1.5px] border-primary text-primary px-6.5 py-3.5 hover:bg-white"
                 >
                   WhatsApp Us

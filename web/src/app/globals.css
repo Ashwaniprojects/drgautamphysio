@@ -30,8 +30,8 @@
   --color-warning: #f59e0b;
   --color-glass: rgba(255, 255, 255, 0.72);
   --color-glass-dark: rgba(12, 26, 26, 0.85);
-  --font-display: var(--font-display), system-ui, sans-serif;
-  --font-body: var(--font-body), system-ui, sans-serif;
+  --font-display: "Figtree", system-ui, sans-serif;
+  --font-body: "Noto Sans", system-ui, sans-serif;
 }
 
 @theme inline {

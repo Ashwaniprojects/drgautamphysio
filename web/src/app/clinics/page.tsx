@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { ClockIcon, PinIcon, PhoneIcon, StarIcon } from "@/components/icons";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { clinics } from "@/lib/data/clinics";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Our Clinics | Best Physiotherapist in Lucknow",
@@ -38,13 +39,14 @@ export default function ClinicsPage() {
         <div className="px-6 md:px-22 py-12 md:py-16 flex flex-col gap-10">
           {clinics.map((c, i) => (
             <ScrollReveal key={c.slug} className={`flex flex-col ${i % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"} gap-8 lg:gap-12 items-center`}>
-              <div className="lg:flex-1 shrink-0 w-full h-[240px] md:h-[300px] bg-gradient-to-br from-primary-50 to-tint rounded-2xl border border-primary-200/40 flex items-center justify-center text-center p-8 relative overflow-hidden">
-                {/* Decorative background */}
-                <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, var(--color-primary) 1px, transparent 0)", backgroundSize: "24px 24px" }} />
-                <div className="relative">
-                  <PinIcon size={48} className="text-primary/25 mb-2" />
-                  <span className="block text-sm text-primary/60 font-medium">{c.photoPlaceholder}</span>
-                </div>
+              <div className="lg:flex-1 shrink-0 w-full h-[240px] md:h-[300px] rounded-2xl overflow-hidden relative border border-ink/10">
+                <Image
+                  src={c.photo}
+                  alt={`${c.name} — ${c.area}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
 
               <div className="flex-1 flex flex-col gap-4">

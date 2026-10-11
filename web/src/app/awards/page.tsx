@@ -1,4 +1,4 @@
-import { PhoneIcon, PinIcon } from "@/components/icons";
+import { PhoneIcon } from "@/components/icons";
 import { TopBar } from "@/components/layout/TopBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -6,6 +6,7 @@ import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { siteConfig } from "@/lib/site-config";
 import { doctor } from "@/lib/data/doctor";
+import Image from "next/image";
 
 const achievements = [
   { year: "2026", title: "Significant Contribution Award", org: "IAP Excellence Awards", event: "World Physiotherapy Asia Western Pacific Regional Conference, New Delhi", highlight: true },
@@ -119,6 +120,25 @@ export default function AwardsPage() {
             </div>
           </div>
         </div>
+
+        {/* Certificate & award photos */}
+        <ScrollReveal>
+          <h2 className="font-display text-2xl font-semibold text-ink mb-2">Award certificates</h2>
+          <p className="text-[13px] text-ink/50 mb-5 -mt-1">Scans of award certificates and event photos from conferences.</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[
+              { src: "/images/award-photo-world-physio-2026.jpg", alt: "Significant Contribution Award — World Physiotherapy Asia Western Pacific Regional Conference, New Delhi 2026" },
+              { src: "/images/iap-award-certificate-2026.jpg", alt: "IAP Excellence Awards 2026 certificate" },
+              { src: "/images/iap-excellence-award-2026.jpg", alt: "IAP Excellence Award" },
+              { src: "/images/physio-guide-3-award.jpg", alt: "Physio Guide 3 National Conference award" },
+              { src: "/images/physio-guide-3-conference.jpg", alt: "Physio Guide 3 conference" },
+            ].map((photo) => (
+              <div key={photo.src} className="relative aspect-[4/3] rounded-xl overflow-hidden border border-ink/8 bg-ink/5 hover:shadow-lg transition-shadow duration-300">
+                <Image src={photo.src} alt={photo.alt} fill className="object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
 
         {/* Academic contributions */}
         <div className="max-w-3xl mx-auto">
