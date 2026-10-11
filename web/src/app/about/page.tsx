@@ -1,18 +1,29 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { TopBar } from "@/components/layout/TopBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Button } from "@/components/ui/Button";
-import { CheckIcon } from "@/components/icons";
+import { ArrowRightIcon, CheckIcon } from "@/components/icons";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { doctor } from "@/lib/data/doctor";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "About Dr. S.K. Gautam | Dr. Gautam's Physio & Rehab Centre",
+  title: "About Dr. S.K. Gautam | Best Chiropractor in Lucknow",
   description:
-    "Dr. Surendra Kumar Gautam (P.T.), Chief Consultant Physiotherapist with 18+ years of practice in Lucknow. Qualifications, career and awards.",
+    "Dr. Surendra Kumar Gautam (P.T.), Chief Consultant Physiotherapist — ranked among the best chiropractors in Lucknow. 18+ years, Ph.D. Scholar, IAP State Treasurer, 10+ national and international awards.",
+  keywords: [
+    "Dr. S.K. Gautam physiotherapist",
+    "best chiropractor in Lucknow",
+    "best physiotherapist in Lucknow",
+    "Lucknow physiotherapy clinic",
+    "chiropractic Lucknow",
+    "osteopathy Lucknow",
+  ],
+  robots: { index: true, follow: true },
+  alternates: { canonical: "/about" },
 };
 
 const approach = [
@@ -32,47 +43,53 @@ export default function AboutPage() {
         </PageHeader>
 
         <div className="px-6 md:px-22 py-12 md:py-16 flex flex-col lg:flex-row gap-12 lg:gap-16">
-          <aside className="flex-1 max-w-[420px] flex flex-col gap-5">
-            <div className="relative aspect-square rounded-2xl overflow-hidden bg-tint">
-              <Image
-                src="/images/dr-gautam-portrait.jpg"
-                alt={`${doctor.fullName}, ${doctor.title}`}
-                fill
-                sizes="(min-width: 1024px) 420px, 100vw"
-                className="object-cover object-top"
-              />
-            </div>
+          <aside className="lg:flex-1 max-w-[420px] flex flex-col gap-5">
+            <ScrollReveal>
+              <div className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary-100 via-primary-50 to-tint border border-primary-200/40 flex items-center justify-center">
+                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shadow-[0_12px_40px_rgba(13,148,136,0.25)]">
+                  <span className="font-display text-4xl font-bold text-paper">SG</span>
+                </div>
+                <div className="absolute bottom-5 left-5 right-5 bg-white/90 backdrop-blur-sm rounded-xl p-4 border border-primary-100/60">
+                  <span className="text-sm font-semibold text-ink block">{doctor.name} {doctor.suffix}</span>
+                  <span className="text-xs text-ink/55">{doctor.registration}</span>
+                </div>
+              </div>
+            </ScrollReveal>
 
-            <div className="bg-white border border-ink/10 rounded-2xl p-5 flex flex-col gap-3">
-              <span className="text-sm font-semibold text-ink">Academics</span>
-              <ul className="flex flex-col gap-1.5">
-                {doctor.academics.map((q) => (
-                  <li key={q} className="text-sm text-ink/65 leading-relaxed">{q}</li>
-                ))}
-              </ul>
-              <span className="text-sm font-semibold text-ink mt-2">Fellowships &amp; certifications</span>
-              <ul className="flex flex-col gap-1.5">
-                {doctor.fellowshipsAndCertifications.map((q) => (
-                  <li key={q} className="text-sm text-ink/65 leading-relaxed">{q}</li>
-                ))}
-              </ul>
-              <span className="text-xs text-ink/45 pt-3 border-t border-ink/10 mt-1">
-                Also listed on clinic material: {doctor.alsoListedOnClinicMaterial.join(", ")}
-              </span>
-            </div>
+            <ScrollReveal className="reveal-delay-1">
+              <div className="bg-white rounded-2xl p-5 border border-ink/8 flex flex-col gap-3">
+                <span className="text-sm font-semibold text-ink">Academics</span>
+                <ul className="flex flex-col gap-1.5">
+                  {doctor.academics.map((q) => (
+                    <li key={q} className="text-sm text-ink/65 leading-relaxed">{q}</li>
+                  ))}
+                </ul>
+                <span className="text-sm font-semibold text-ink mt-2">Fellowships &amp; certifications</span>
+                <ul className="flex flex-col gap-1.5">
+                  {doctor.fellowshipsAndCertifications.map((q) => (
+                    <li key={q} className="text-sm text-ink/65 leading-relaxed">{q}</li>
+                  ))}
+                </ul>
+                <span className="text-xs text-ink/45 pt-3 border-t border-ink/10 mt-1">
+                  Also listed on clinic material: {doctor.alsoListedOnClinicMaterial.join(", ")}
+                </span>
+              </div>
+            </ScrollReveal>
 
-            <div className="bg-white border border-ink/10 rounded-2xl p-5 flex flex-col gap-3">
-              <span className="text-sm font-semibold text-ink">Registration &amp; memberships</span>
-              <ul className="flex flex-col gap-1.5">
-                {doctor.affiliations.map((a) => (
-                  <li key={a} className="text-sm text-ink/65 leading-relaxed">{a}</li>
-                ))}
-              </ul>
-            </div>
+            <ScrollReveal className="reveal-delay-2">
+              <div className="bg-white rounded-2xl p-5 border border-ink/8 flex flex-col gap-3">
+                <span className="text-sm font-semibold text-ink">Registration &amp; memberships</span>
+                <ul className="flex flex-col gap-1.5">
+                  {doctor.affiliations.map((a) => (
+                    <li key={a} className="text-sm text-ink/65 leading-relaxed">{a}</li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
           </aside>
 
-          <div className="flex-[1.4] flex flex-col gap-12">
-            <section className="flex flex-col gap-3">
+          <div className="lg:flex-[1.4] flex flex-col gap-12">
+            <ScrollReveal>
               <h2 className="font-display text-2xl font-semibold text-ink">Background</h2>
               <p className="text-[15px] leading-relaxed text-ink/70">
                 {doctor.fullName} is the founder and director of Dr. Gautam&apos;s Physio &amp; Rehab Centre
@@ -86,12 +103,9 @@ export default function AboutPage() {
                 final-year BPT and DPT students at Neera Hospital, and regularly speaks and chairs sessions at
                 national physiotherapy conferences.
               </p>
-              <p className="text-xs text-ink/45">
-                [The year the centre itself was founded is still pending, requirements checklist §A.]
-              </p>
-            </section>
+            </ScrollReveal>
 
-            <section className="flex flex-col gap-4">
+            <ScrollReveal>
               <h2 className="font-display text-2xl font-semibold text-ink">How he approaches treatment</h2>
               <div className="flex flex-col gap-3">
                 {approach.map((point) => (
@@ -101,9 +115,9 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
-            </section>
+            </ScrollReveal>
 
-            <section className="flex flex-col gap-5">
+            <ScrollReveal>
               <h2 className="font-display text-2xl font-semibold text-ink">Career</h2>
               <div className="flex flex-col gap-5 border-l-2 border-primary/25 pl-6">
                 {doctor.career.map((c) => (
@@ -118,90 +132,52 @@ export default function AboutPage() {
                   </div>
                 ))}
               </div>
-            </section>
+            </ScrollReveal>
 
-            <section className="flex flex-col gap-5">
+            <ScrollReveal>
               <h2 className="font-display text-2xl font-semibold text-ink">Awards &amp; recognition</h2>
-              <figure className="flex flex-col gap-2.5">
-                <div className="rounded-2xl overflow-hidden bg-tint">
-                  <Image
-                    src="/images/iap-excellence-award-2026.jpg"
-                    alt={`${doctor.fullName} receiving the Significant Contribution Award at the IAP Excellence Awards 2026`}
-                    width={1800}
-                    height={1200}
-                    sizes="(min-width: 1024px) 800px, 100vw"
-                    className="w-full h-auto"
-                  />
-                </div>
-                <figcaption className="text-sm text-ink/60">
-                  Significant Contribution Award, IAP Excellence Awards 2026, World Physiotherapy Asia Western
-                  Pacific Regional Conference, New Delhi.
-                </figcaption>
-              </figure>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 items-start">
-                <figure className="flex flex-col gap-2.5">
-                  <div className="rounded-2xl overflow-hidden bg-tint border border-ink/10">
-                    <Image
-                      src="/images/iap-award-certificate-2026.jpg"
-                      alt={`Significant Contribution Award certificate conferred on ${doctor.fullName} (PT), World Physiotherapy AWP Regional Conference 2026`}
-                      width={986}
-                      height={1288}
-                      sizes="(min-width: 1024px) 390px, (min-width: 640px) 45vw, 100vw"
-                      className="w-full h-auto"
-                    />
-                  </div>
-                  <figcaption className="text-sm text-ink/60">
-                    The Significant Contribution Award certificate, signed by the conference organising chair and
-                    secretary and the Chair of the World Physiotherapy AWP Region.
-                  </figcaption>
-                </figure>
-                <figure className="flex flex-col gap-2.5">
-                  <div className="rounded-2xl overflow-hidden bg-tint">
-                    <Image
-                      src="/images/physio-guide-3-conference.jpg"
-                      alt="Delegates with a commemorative plaque at the Physio Guide 3 National Conference"
-                      width={1000}
-                      height={1498}
-                      sizes="(min-width: 1024px) 390px, (min-width: 640px) 45vw, 100vw"
-                      className="w-full h-auto"
-                    />
-                  </div>
-                  <figcaption className="text-sm text-ink/60">
-                    Physio Guide 3 National Conference, Aligarh (2025), where Dr. Gautam was a chairperson and
-                    received the Physio Ratan Award.
-                  </figcaption>
-                </figure>
-              </div>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {doctor.awards.map((a) => (
-                  <li key={`${a.title}-${a.year}`} className="bg-tint rounded-xl p-4 flex flex-col gap-0.5">
-                    <span className="text-sm font-semibold text-ink leading-snug">{a.title}</span>
-                    <span className="text-xs text-ink/60 leading-relaxed">
-                      {a.event} &middot; {a.year}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </section>
 
-            <section className="flex flex-col gap-4">
-              <h2 className="font-display text-2xl font-semibold text-ink">Conferences &amp; academic work</h2>
-              <figure className="flex flex-col gap-2.5">
-                <div className="rounded-2xl overflow-hidden bg-tint">
-                  <Image
-                    src="/images/iap-uttar-pradesh-event.jpg"
-                    alt="A programme of the Indian Association of Physiotherapists, Uttar Pradesh, with a bouquet being presented on stage"
-                    width={1800}
-                    height={1200}
-                    sizes="(min-width: 1024px) 800px, 100vw"
-                    className="w-full h-auto"
-                  />
+              {/* Abstract award visual */}
+              <div className="relative bg-gradient-to-br from-primary-50 to-tint rounded-2xl p-8 border border-primary-200/40 flex items-center gap-6 mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center shadow-lg shrink-0">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="8" r="6" />
+                    <path d="M15.5 3l1.5 3 3 1.5-3 1.5-1.5 3-1.5-3-3-1.5 3-1.5z" />
+                  </svg>
                 </div>
-                <figcaption className="text-sm text-ink/60">
-                  A programme of the Indian Association of Physiotherapists, Uttar Pradesh, where Dr. Gautam
-                  serves as State Treasurer.
-                </figcaption>
-              </figure>
+                <div className="flex flex-col gap-1">
+                  <span className="text-lg font-semibold text-ink">IAP Excellence Awards 2026</span>
+                  <span className="text-sm text-ink/60">Significant Contribution Award — World Physiotherapy Asia Western Pacific Regional Conference, New Delhi</span>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {doctor.awards.map((a) => (
+                  <div key={`${a.title}-${a.year}`} className="bg-white rounded-xl p-4 border border-ink/8 hover:border-primary/20 transition-all duration-300">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-[11px] font-bold tracking-[0.06em] uppercase bg-primary-50 text-primary px-2.5 py-1 rounded-full">{a.year}</span>
+                    </div>
+                    <span className="text-sm font-semibold text-ink leading-snug">{a.title}</span>
+                    <span className="text-xs text-ink/55 mt-0.5">{a.event}</span>
+                  </div>
+                ))}
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <h2 className="font-display text-2xl font-semibold text-ink">Conferences &amp; academic work</h2>
+              <div className="bg-gradient-to-br from-primary-50 to-tint rounded-2xl p-6 border border-primary-200/30 flex items-center gap-4 mb-5">
+                <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center shrink-0">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                  </svg>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <span className="text-sm font-semibold text-ink">IAP Uttar Pradesh — State Treasurer</span>
+                  <span className="text-xs text-ink/55">Indian Association of Physiotherapists, Lucknow chapter</span>
+                </div>
+              </div>
               <ul className="flex flex-col gap-2.5">
                 {doctor.academicContributions.map((c) => (
                   <li key={c} className="flex items-start gap-3">
@@ -210,16 +186,22 @@ export default function AboutPage() {
                   </li>
                 ))}
               </ul>
-            </section>
+            </ScrollReveal>
 
-            <div className="bg-tint rounded-2xl p-6 flex flex-col gap-2">
-              <span className="text-sm font-semibold text-ink">Introduction video</span>
-              <span className="text-sm text-ink/60 leading-relaxed">
-                [A short intro video, even recorded on a phone, is a meaningful trust lift here. Pending,
-                requirements checklist §A. It embeds from the existing YouTube channel,
-                @drgautamphysiotherapy, once available.]
-              </span>
-            </div>
+            <ScrollReveal className="reveal-delay-1">
+              <div className="bg-gradient-to-br from-primary-50 to-tint rounded-2xl p-6 border border-primary-200/40 flex flex-col gap-2">
+                <div className="flex items-center gap-3">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                    <polygon points="5 3 19 12 5 21 5 3" />
+                  </svg>
+                  <span className="text-sm font-semibold text-ink">Introduction video</span>
+                </div>
+                <span className="text-sm text-ink/60 leading-relaxed">
+                  A short intro video is a meaningful trust lift here. Pending — available on{" "}
+                  <a href={siteConfig.youtubeHandle} target="_blank" rel="noopener" className="text-primary hover:underline">our YouTube channel</a>.
+                </span>
+              </div>
+            </ScrollReveal>
 
             <div className="flex flex-wrap gap-3">
               <Button href="/book">Book Appointment</Button>

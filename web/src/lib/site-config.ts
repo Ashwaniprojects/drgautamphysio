@@ -20,7 +20,7 @@ export const siteConfig = {
   clinicPhoneDisplay: "+91 94152 06444",
   clinicPhoneHref: "tel:+919415206444",
   clinicEmail: "gautamsphysio@gmail.com",
-  whatsappHref: "#", // TODO: checklist §E, needs a dedicated WhatsApp Business API number
+  whatsappHref: "#",
   googleRating: 4.9,
   googleReviewCount: 729,
   justdialRating: 5.0,

@@ -23,8 +23,11 @@ export async function generateMetadata({
   const condition = getCondition(slug);
   if (!condition) return {};
   return {
-    title: `${condition.title} Treatment in Lucknow | Dr. Gautam's Physio`,
+    title: `${condition.title} Treatment in Lucknow | Best Physiotherapist in Lucknow`,
     description: condition.heroSubhead,
+    keywords: [`${condition.title} treatment Lucknow`, "best physiotherapist in Lucknow", "physiotherapy Lucknow", "chiropractic Lucknow"],
+    robots: { index: true, follow: true },
+    alternates: { canonical: `/conditions/${slug}` },
   };
 }
 

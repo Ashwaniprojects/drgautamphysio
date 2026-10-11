@@ -10,9 +10,19 @@ import { ArrowRightIcon } from "@/components/icons";
 import { conditions } from "@/lib/data/conditions";
 
 export const metadata: Metadata = {
-  title: "Conditions We Treat | Dr. Gautam's Physio & Rehab Centre",
+  title: "Conditions Treated | Best Physiotherapist in Lucknow",
   description:
-    "Back pain, sciatica, neck and shoulder pain, sports injuries, post-surgery rehab, joint and arthritis pain, and women's and pediatric physiotherapy in Lucknow.",
+    "Sciatica, back pain, neck pain, sports injuries, post-surgery rehab, joint pain, frozen shoulder and more. Dr. S.K. Gautam — the best physiotherapist in Lucknow.",
+  keywords: [
+    "sciatica treatment Lucknow",
+    "back pain treatment Lucknow",
+    "neck pain relief Lucknow",
+    "sports injury physiotherapy Lucknow",
+    "best physiotherapist in Lucknow",
+    "physiotherapy for joint pain Lucknow",
+  ],
+  robots: { index: true, follow: true },
+  alternates: { canonical: "/conditions" },
 };
 
 export default function ConditionsIndexPage() {

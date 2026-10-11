@@ -153,3 +153,18 @@ export function ClockIcon({ className, size = 16 }: IconProps) {
     </svg>
   );
 }
+
+export function QuoteIcon({ className, size = 20 }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M11 7H7a2 2 0 0 0-2 2v4c0 1.1.9 2 2 2h4v-1a3 3 0 0 0-3-3H7v-1h4zm9 0h-4a2 2 0 0 0-2 2v4c0 1.1.9 2 2 2h4v-1a3 3 0 0 0-3-3h-1v-1h4z" />
+    </svg>
+  );
+}

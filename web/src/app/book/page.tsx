@@ -8,8 +8,17 @@ import { PhoneIcon } from "@/components/icons";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Book Appointment | Dr. Gautam's Physio & Rehab Centre",
-  description: "Choose a clinic, pick a time that works, and confirm your physiotherapy appointment.",
+  title: "Book Appointment | Best Chiropractor in Lucknow",
+  description:
+    "Book a physiotherapy appointment with Dr. S.K. Gautam — the best chiropractor in Lucknow. Choose your clinic, pick a time, confirm on WhatsApp.",
+  keywords: [
+    "best chiropractor in Lucknow",
+    "book physiotherapy appointment Lucknow",
+    "physiotherapy booking Lucknow",
+    "chiropractic booking Lucknow",
+  ],
+  robots: { index: true, follow: true },
+  alternates: { canonical: "/book" },
 };
 
 export default function BookPage() {
