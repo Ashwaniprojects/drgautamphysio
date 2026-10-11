@@ -1,3 +1,4 @@
 {
-  "buildCommand": "npm_config_unsresolver_script=true npm install && next build"
+  "installCommand": "npm install --ignore-scripts",
+  "buildCommand": "npm run build"
 }
