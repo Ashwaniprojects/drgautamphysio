@@ -3,27 +3,16 @@
 import { useReveal } from "@/hooks/useScrollReveal";
 import Link from "next/link";
 import { ArrowRightIcon } from "@/components/icons";
+import { articles } from "@/lib/data/blog";
 
-const posts = [
-  {
-    tag: "Sciatica",
-    title: "Sciatica pain: what actually helps, and what to skip",
-    readTime: "5 min read",
-    icon: "🔬",
-  },
-  {
-    tag: "Recovery",
-    title: "How many physiotherapy sessions will I actually need?",
-    readTime: "4 min read",
-    icon: "📈",
-  },
-  {
-    tag: "Post-Surgery",
-    title: "Getting back on your feet after joint replacement",
-    readTime: "6 min read",
-    icon: "🦴",
-  },
-];
+/** Featured on the homepage: the three articles with the most general reach. */
+const featured = articles.slice(0, 3);
+
+const icons: Record<string, string> = {
+  "Sciatica pain: what actually helps, and what to skip": "⚡",
+  "How many physiotherapy sessions will I actually need?": "📈",
+  "Getting back on your feet after joint replacement": "🦴",
+};
 
 export function BlogPreview() {
   const sectionRef = useReveal();
@@ -50,28 +39,28 @@ export function BlogPreview() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-          {posts.map((p, i) => (
+          {featured.map((a, i) => (
             <Link
-              key={p.title}
-              href="/blog"
+              key={a.slug}
+              href={`/blog/${a.slug}`}
               className={`reveal reveal-delay-${i + 1} card-hover group bg-white rounded-2xl overflow-hidden border border-ink/8`}
             >
               {/* Visual header */}
               <div className="relative h-[140px] bg-gradient-to-br from-primary-100 to-primary-50 overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center text-4xl opacity-60 group-hover:scale-110 transition-transform duration-500">
-                  {p.icon}
+                  {icons[a.title] ?? "🩺"}
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent" />
               </div>
 
               <div className="p-5 md:p-6 flex flex-col gap-3">
                 <span className="text-[11px] font-bold tracking-[0.08em] uppercase text-primary">
-                  {p.tag}
+                  {a.category}
                 </span>
                 <span className="text-[16px] font-semibold leading-snug text-ink group-hover:text-primary transition-colors">
-                  {p.title}
+                  {a.title}
                 </span>
-                <span className="text-[12px] text-ink/40">{p.readTime}</span>
+                <span className="text-[12px] text-ink/40">{a.readTime}</span>
               </div>
             </Link>
           ))}

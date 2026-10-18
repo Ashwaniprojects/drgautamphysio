@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { TopBar } from "@/components/layout/TopBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -10,20 +11,20 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { clinics } from "@/lib/data/clinics";
 import Image from "next/image";
 
-export const metadata: Metadata = {
-  title: "Our Clinics | Best Physiotherapist in Lucknow",
+export const metadata: Metadata = buildMetadata({
+  title: "Physiotherapy Clinics in Lucknow | 3 Locations | Dr. Gautam's Physio",
   description:
-    "Subhash Marg (own clinic), Neera Hospital (Mahanagar) and Medox Hospital (Jankipuram) — 3 Lucknow locations for Dr. S.K. Gautam's physiotherapy care.",
+    "Dr. Gautam's Physio treats at 3 Lucknow locations: Subhash Marg in Yahiyaganj, Neera Hospital in Mahanagar and Medox Hospital in Jankipuram. Hours, addresses and phone numbers.",
+  path: "/clinics",
   keywords: [
     "physiotherapy clinic Lucknow",
-    "best physiotherapist in Lucknow",
+    "physiotherapist Yahiyaganj Lucknow",
     "Subhash Marg physiotherapy",
-    "Mahanagar physiotherapy",
-    "Jankipuram physiotherapy",
+    "physiotherapy Mahanagar Lucknow",
+    "physiotherapy Jankipuram Lucknow",
+    "physiotherapy clinic near me Lucknow",
   ],
-  robots: { index: true, follow: true },
-  alternates: { canonical: "/clinics" },
-};
+});
 
 export default function ClinicsPage() {
   return (

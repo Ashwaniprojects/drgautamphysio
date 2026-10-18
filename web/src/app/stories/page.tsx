@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { TopBar } from "@/components/layout/TopBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -9,19 +10,19 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { conditions } from "@/lib/data/conditions";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
-  title: "Patient Stories | Best Physiotherapist in Lucknow",
+export const metadata: Metadata = buildMetadata({
+  title: "Patient Reviews & Recovery Stories | Dr. Gautam's Physio Lucknow",
   description:
-    "Recovery stories and verified Google reviews from patients treated by Dr. S.K. Gautam — the best physiotherapist in Lucknow. 729+ verified reviews.",
+    "How patients described their recovery after treatment by Dr. S.K. Gautam — 4.9 from 729 verified Google reviews across his 3 Lucknow clinics, plus what he was awarded for.",
+  path: "/stories",
   keywords: [
-    "best physiotherapist in Lucknow",
     "physiotherapy reviews Lucknow",
-    "Dr. Gautam patient stories",
-    "back pain recovery Lucknow",
+    "Dr. Gautam patient reviews",
+    "physiotherapy results Lucknow",
+    "back pain recovery story",
+    "best physiotherapist reviews Lucknow",
   ],
-  robots: { index: true, follow: true },
-  alternates: { canonical: "/stories" },
-};
+});
 
 const reviews = [
   { condition: "Sciatica Relief", text: "After months of unbearable sciatica pain, Dr. Gautam's treatment gave me my life back. The manual therapy and personalized exercises made all the difference.", author: "Priya S.", location: "Lucknow", rating: 5 },

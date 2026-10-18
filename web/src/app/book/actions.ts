@@ -1,6 +1,7 @@
 "use server";
 
-import { getSupabaseServerClient, isSupabaseConfigured } from "@/lib/supabase/server";
+import { getSupabaseServerClient } from "@/lib/supabase/server";
+import { isSupabaseConfigured } from "@/lib/supabase/config";
 
 export type BookingInput = {
   locationSlug: string;
@@ -18,6 +19,10 @@ export type BookingResult =
   | { ok: true; appointmentId: string }
   | { ok: false; error: string };
 
+/**
+ * The wizard collects times as 12-hour labels ("10:30 AM"); Postgres stores
+ * `time` without a timezone, so we just need a clean HH:MM:SS.
+ */
 function to24Hour(time12h: string): string | null {
   const match = /^(\d{1,2}):(\d{2})\s?(AM|PM)$/i.exec(time12h.trim());
   if (!match) return null;
@@ -42,57 +47,35 @@ export async function createBooking(input: BookingInput): Promise<BookingResult>
     return { ok: false, error: "Name and phone are required." };
   }
   const time24 = to24Hour(input.time12h);
-  if (!time24) {
-    return { ok: false, error: "Could not parse the selected time." };
+  if (!time24) return { ok: false, error: "Could not parse the selected time." };
+
+  // One RPC does the location lookup, the patient upsert-by-phone and the
+  // appointment insert in a single transaction, so a partial write is
+  // impossible. It also re-checks the same rules (name/phone present, phone
+  // shape, clinic exists, date not in the past) at the database.
+  const supabase = await getSupabaseServerClient();
+
+  const { data, error } = await supabase.rpc("create_booking", {
+    p_location_slug: input.locationSlug,
+    p_scheduled_date: input.dateISO,
+    p_scheduled_time: time24,
+    p_name: input.name.trim(),
+    p_phone: input.phone.trim(),
+    p_age: input.age ? Number(input.age) : null,
+    p_reason: input.reason?.trim() || null,
+    p_patient_type: input.patientType,
+    p_whatsapp_opt_in: input.whatsappOptIn,
+  });
+
+  if (error) return { ok: false, error: error.message };
+
+  const row = Array.isArray(data) ? data[0] : null;
+  if (!row || !row.appointment_id) {
+    return {
+      ok: false,
+      error: "The clinic could not be found, or that slot is no longer available.",
+    };
   }
 
-  const supabase = getSupabaseServerClient();
-
-  const { data: location, error: locationError } = await supabase
-    .from("locations")
-    .select("id")
-    .eq("slug", input.locationSlug)
-    .single();
-
-  if (locationError || !location) {
-    return { ok: false, error: "That clinic could not be found." };
-  }
-
-  const { data: patient, error: patientError } = await supabase
-    .from("patients")
-    .upsert(
-      {
-        name: input.name.trim(),
-        phone: input.phone.trim(),
-        age: input.age ? Number(input.age) : null,
-        whatsapp_opt_in: input.whatsappOptIn,
-      },
-      { onConflict: "phone" }
-    )
-    .select("id")
-    .single();
-
-  if (patientError || !patient) {
-    return { ok: false, error: "Could not save patient details." };
-  }
-
-  const { data: appointment, error: appointmentError } = await supabase
-    .from("appointments")
-    .insert({
-      patient_id: patient.id,
-      location_id: location.id,
-      scheduled_date: input.dateISO,
-      scheduled_time: time24,
-      patient_type: input.patientType,
-      reason: input.reason || null,
-      status: "scheduled",
-    })
-    .select("id")
-    .single();
-
-  if (appointmentError || !appointment) {
-    return { ok: false, error: "Could not create the appointment." };
-  }
-
-  return { ok: true, appointmentId: appointment.id as string };
+  return { ok: true, appointmentId: String(row.appointment_id) };
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { TopBar } from "@/components/layout/TopBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -9,21 +10,22 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { treatments } from "@/lib/data/treatments";
 
-export const metadata: Metadata = {
-  title: "Treatment Techniques | Best Chiropractor in Lucknow",
+export const metadata: Metadata = buildMetadata({
+  title: "Treatment Techniques | Physiotherapy, Chiropractic & Osteopathy Lucknow",
   description:
-    "Chiropractic, osteopathy, manual therapy, dry needling, cupping, craniosacral therapy and FDM from Dr. S.K. Gautam — the best chiropractor in Lucknow.",
+    "11 techniques Dr. S.K. Gautam uses in Lucknow: chiropractic, osteopathy, manual therapy, dry needling, cupping, craniosacral, FDM, FNT, visceral and more. How each one works.",
+  path: "/treatments",
   keywords: [
-    "chiropractor Lucknow",
-    "best chiropractor in Lucknow",
+    "chiropractic Lucknow",
     "osteopathy Lucknow",
     "manual therapy Lucknow",
     "dry needling Lucknow",
+    "cupping therapy Lucknow",
+    "craniosacral therapy Lucknow",
     "FDM therapy Lucknow",
+    "physiotherapy techniques Lucknow",
   ],
-  robots: { index: true, follow: true },
-  alternates: { canonical: "/treatments" },
-};
+});
 
 export default function TreatmentsPage() {
   return (

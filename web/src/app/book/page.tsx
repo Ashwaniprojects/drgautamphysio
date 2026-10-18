@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { TopBar } from "@/components/layout/TopBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -7,19 +8,19 @@ import { BookingWizard } from "@/components/booking/BookingWizard";
 import { PhoneIcon } from "@/components/icons";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
-  title: "Book Appointment | Best Chiropractor in Lucknow",
+export const metadata: Metadata = buildMetadata({
+  title: "Book a Physiotherapy Appointment in Lucknow | Dr. Gautam's Physio",
   description:
-    "Book a physiotherapy appointment with Dr. S.K. Gautam — the best chiropractor in Lucknow. Choose your clinic, pick a time, confirm on WhatsApp.",
+    "Book a physiotherapy appointment in Lucknow in under a minute. Pick your clinic — Yahiyaganj, Mahanagar or Jankipuram — choose a time, and get confirmed on WhatsApp.",
+  path: "/book",
   keywords: [
-    "best chiropractor in Lucknow",
     "book physiotherapy appointment Lucknow",
-    "physiotherapy booking Lucknow",
-    "chiropractic booking Lucknow",
+    "physiotherapy online booking Lucknow",
+    "best physiotherapist booking Lucknow",
+    "chiropractor appointment Lucknow",
+    "physiotherapist near me booking",
   ],
-  robots: { index: true, follow: true },
-  alternates: { canonical: "/book" },
-};
+});
 
 export default function BookPage() {
   return (

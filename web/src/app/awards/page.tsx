@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { PhoneIcon } from "@/components/icons";
 import { TopBar } from "@/components/layout/TopBar";
 import { Navbar } from "@/components/layout/Navbar";
@@ -7,6 +9,20 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { siteConfig } from "@/lib/site-config";
 import { doctor } from "@/lib/data/doctor";
 import Image from "next/image";
+
+export const metadata: Metadata = buildMetadata({
+  title: "Awards & Recognition | Dr. S.K. Gautam | Lucknow Physiotherapist",
+  description:
+    "15 national and international recognitions for Dr. S.K. Gautam, including the IAP Excellence Award at World Physiotherapy in New Delhi, plus the conferences he chaired and judged.",
+  path: "/awards",
+  keywords: [
+    "Dr. Gautam awards",
+    "best physiotherapist award Lucknow",
+    "IAP Excellence Award",
+    "Physio Ratan Award",
+    "Physioconnect conference physiotherapist",
+  ],
+});
 
 const achievements = [
   { year: "2026", title: "Significant Contribution Award", org: "IAP Excellence Awards", event: "World Physiotherapy Asia Western Pacific Regional Conference, New Delhi", highlight: true },

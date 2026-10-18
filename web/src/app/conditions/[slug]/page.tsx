@@ -8,6 +8,7 @@ import { MobileActionBar } from "@/components/layout/MobileActionBar";
 import { Button } from "@/components/ui/Button";
 import { CheckIcon, PinIcon } from "@/components/icons";
 import { conditions, getCondition } from "@/lib/data/conditions";
+import { buildMetadata } from "@/lib/metadata";
 import { clinics } from "@/lib/data/clinics";
 import { siteConfig } from "@/lib/site-config";
 
@@ -23,13 +24,47 @@ export async function generateMetadata({
   const { slug } = await params;
   const condition = getCondition(slug);
   if (!condition) return {};
-  return {
-    title: `${condition.title} Treatment in Lucknow | Best Physiotherapist in Lucknow`,
-    description: condition.heroSubhead,
-    keywords: [`${condition.title} treatment Lucknow`, "best physiotherapist in Lucknow", "physiotherapy Lucknow", "chiropractic Lucknow"],
-    robots: { index: true, follow: true },
-    alternates: { canonical: `/conditions/${slug}` },
-  };
+  return buildMetadata({
+    title: `${condition.title} Treatment in Lucknow | Dr. Gautam's Physio`,
+    description: seoDescription(condition.slug, condition.title),
+    path: `/conditions/${slug}`,
+    keywords: [
+      `${condition.title.toLowerCase()} treatment Lucknow`,
+      `${condition.title.toLowerCase()} Lucknow`,
+      "best physiotherapist in Lucknow",
+      "physiotherapy Lucknow",
+      "Dr. Gautam physiotherapy",
+    ],
+  });
+}
+
+/**
+ * heroSubhead is written for the page, so it runs past 160 characters and gets
+ * truncated in search results. These are sized for the SERP.
+ */
+function seoDescription(slug: string, title: string): string {
+  switch (slug) {
+    case "back-pain-slip-disc":
+      return "Persistent back pain or a confirmed slip disc? Dr. S.K. Gautam treats lower back pain and bulging discs in Lucknow with hands-on assessment and corrective exercise.";
+    case "sciatica-nerve-pain":
+      return "Sharp pain or numbness running from the lower back down the leg? Get sciatica treated in Lucknow by Dr. S.K. Gautam — hands-on assessment and nerve gliding work.";
+    case "neck-shoulder-pain":
+      return "Neck stiffness, shoulder pain or headaches from the base of the skull? Dr. S.K. Gautam treats neck and shoulder pain in Lucknow with hands-on therapy and mobility work.";
+    case "sports-injury-recovery":
+      return "Sprain, strain or a sports injury that isn't healing on its own? Dr. S.K. Gautam offers sports injury physiotherapy in Lucknow with a graded return-to-play plan.";
+    case "post-surgery-rehab":
+      return "Recovering from knee or hip replacement, ligament reconstruction or spine surgery? Dr. S.K. Gautam provides post-surgery rehabilitation in Lucknow, to your protocol.";
+    case "joint-arthritis-pain":
+      return "Joint pain and arthritis that limit what you can do? Dr. S.K. Gautam manages arthritis and joint pain in Lucknow with hands-on therapy and a long-term load plan.";
+    case "womens-pediatric-health":
+      return "Pelvic floor physiotherapy, women's health, pediatric and geriatric care in Lucknow from Dr. S.K. Gautam — gentle, stage-appropriate assessment and treatment.";
+    case "migraine":
+      return "Frequent migraines or headaches that won't settle? Dr. S.K. Gautam treats migraine in Lucknow with hands-on assessment of the neck, posture and movement.";
+    case "pelvic-floor-rehab":
+      return "Pelvic floor physiotherapy in Lucknow from Dr. S.K. Gautam — for incontinence, postpartum recovery and pelvic pain, with a private, stage-appropriate assessment.";
+    default:
+      return `${title} treatment in Lucknow by Dr. S.K. Gautam — hands-on assessment and guided rehabilitation across his 3 Lucknow clinics.`;
+  }
 }
 
 export default async function ConditionPage({

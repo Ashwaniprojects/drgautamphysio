@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { TopBar } from "@/components/layout/TopBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -11,21 +12,20 @@ import { doctor } from "@/lib/data/doctor";
 import { siteConfig } from "@/lib/site-config";
 import Image from "next/image";
 
-export const metadata: Metadata = {
-  title: "About Dr. S.K. Gautam | Best Chiropractor in Lucknow",
+export const metadata: Metadata = buildMetadata({
+  title: "About Dr. S.K. Gautam | Best Physiotherapist in Lucknow",
   description:
-    "Dr. Surendra Kumar Gautam (P.T.), Chief Consultant Physiotherapist — ranked among the best chiropractors in Lucknow. 18+ years, Ph.D. Scholar, IAP State Treasurer, 10+ national and international awards.",
+    "Dr. Surendra Kumar Gautam (P.T.) — physiotherapist in Lucknow with 18+ years of practice, MPT in Neurology, Ph.D. Scholar and IAP State Treasurer. See the clinics he treats at.",
+  path: "/about",
   keywords: [
     "Dr. S.K. Gautam physiotherapist",
-    "best chiropractor in Lucknow",
     "best physiotherapist in Lucknow",
-    "Lucknow physiotherapy clinic",
-    "chiropractic Lucknow",
+    "best chiropractor in Lucknow",
+    "physiotherapist Yahiyaganj Lucknow",
     "osteopathy Lucknow",
+    "IAP State Treasurer Lucknow",
   ],
-  robots: { index: true, follow: true },
-  alternates: { canonical: "/about" },
-};
+});
 
 const approach = [
   "Treatment starts with a full assessment, not a fixed protocol.",

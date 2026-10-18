@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import { TopBar } from "@/components/layout/TopBar";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -10,19 +11,19 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { clinics } from "@/lib/data/clinics";
 import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
-  title: "Contact Us | Best Physiotherapist in Lucknow",
+export const metadata: Metadata = buildMetadata({
+  title: "Contact Dr. Gautam's Physio | Phone, WhatsApp & Clinic Addresses",
   description:
-    "Phone, WhatsApp and addresses for all 3 Dr. Gautam's Physio locations in Lucknow. Call +91 94152 06444 or message on WhatsApp for a fast response.",
+    "Call +91 94152 06444 or send a message to Dr. Gautam's Physio & Rehab Centre. Addresses and timings for all 3 Lucknow clinics — Yahiyaganj, Mahanagar and Jankipuram.",
+  path: "/contact",
   keywords: [
-    "best physiotherapist in Lucknow",
-    "physiotherapy contact Lucknow",
+    "physiotherapist contact Lucknow",
     "chiropractor contact Lucknow",
+    "Dr. Gautam phone number",
     "Lucknow physiotherapy address",
+    "physiotherapy clinic near me",
   ],
-  robots: { index: true, follow: true },
-  alternates: { canonical: "/contact" },
-};
+});
 
 export default function ContactPage() {
   return (

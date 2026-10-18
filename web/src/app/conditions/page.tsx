@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { TopBar } from "@/components/layout/TopBar";
 import { Navbar } from "@/components/layout/Navbar";
@@ -9,21 +10,21 @@ import { ConditionIcon } from "@/components/ConditionIcon";
 import { ArrowRightIcon } from "@/components/icons";
 import { conditions } from "@/lib/data/conditions";
 
-export const metadata: Metadata = {
-  title: "Conditions Treated | Best Physiotherapist in Lucknow",
+export const metadata: Metadata = buildMetadata({
+  title: "Conditions Treated | Physiotherapy & Pain Management in Lucknow",
   description:
-    "Sciatica, back pain, neck pain, sports injuries, post-surgery rehab, joint pain, frozen shoulder and more. Dr. S.K. Gautam — the best physiotherapist in Lucknow.",
+    "Slip disc, sciatica, neck and shoulder pain, sports injuries, post-surgery rehab, joint pain and frozen shoulder. What each one actually needs, and how Dr. Gautam treats it.",
+  path: "/conditions",
   keywords: [
+    "physiotherapy conditions Lucknow",
     "sciatica treatment Lucknow",
     "back pain treatment Lucknow",
     "neck pain relief Lucknow",
-    "sports injury physiotherapy Lucknow",
-    "best physiotherapist in Lucknow",
-    "physiotherapy for joint pain Lucknow",
+    "frozen shoulder treatment Lucknow",
+    "post surgery rehab Lucknow",
+    "knee pain treatment Lucknow",
   ],
-  robots: { index: true, follow: true },
-  alternates: { canonical: "/conditions" },
-};
+});
 
 export default function ConditionsIndexPage() {
   return (
